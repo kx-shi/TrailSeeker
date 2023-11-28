@@ -1,7 +1,7 @@
 import React from 'react';
 //import TrailCard from './TrailCard';
 
-const TrailContainer = ({ trails }) => {
+const TrailContainer = ({ trailObjects }) => {
   return (
     <div>
       <h2>Trails Near Stockholm</h2>
