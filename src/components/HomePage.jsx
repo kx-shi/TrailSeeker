@@ -1,40 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import TrailContainer from './TrailContainer';
 
-const HomePage = ({ userLocation }) => {
-    const [trails, setTrails] = useState([]);
+function HomePage({ userLocation }) {
+  const [trails, setTrails] = useState([]);
 
-    useEffect(() => {
-        const fetchTrails = async () => {
-            try {
-                const apiKey = 'yourtest-outdoora-ctiveapi';
-                const apiUrl = `https://www.outdooractive.com/api/project/api-dev-oa/nearby/tour?location=${userLocation}&radius=5000&limit=50&sortby=distance&key=${apiKey}`;
+  useEffect(() => {
+    // URL of your API request
+    const apiUrl = `https://www.outdooractive.com/api/project/api-dev-oa/nearby/tour?location=${userLocation}&sortby=distance&radius=5000&limit=50&key=yourtest-outdoora-ctiveapi`;
 
-                const response = await fetch(apiUrl);
-                const data = await response.json();
+    // Set the headers to accept JSON
+    const headers = new Headers({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',  // Optional: If you're sending data, set Content-Type
+    });
 
-                // Assuming the API response has a 'tours' property containing the trail data
-                setTrails(data.tours);
-            } catch (error) {
-                console.error('Error fetching trail data:', error);
-            }
-        };
+    // Make the API request with the specified headers
+    fetch(apiUrl, {
+      method: 'GET',
+      headers: headers
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Handle the JSON response here
+        setTrails(data.results || []);
+        console.log(data);
+      })
+      .catch(error => {
+        // Handle errors here
+        console.error('Error:', error);
+      });
+  }, [userLocation]);
 
-        fetchTrails();
-    }, [userLocation]);
-
-    return (
-        <div>
-            <h1>Trail Explorer</h1>
-
-            {/* <NavBar /> */}
-            <div>Navbar</div>
-
-            {/* <TrailContainer trails={trails} /> */}
-            <div>Trail Container</div>
-
-        </div>
-    );
-};
+  return (
+    <div>
+      {/* Pass the trails data to TrailContainer component */}
+      <TrailContainer trails={trails} />
+    </div>
+  );
+}
 
 export default HomePage;
