@@ -1,14 +1,15 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation,useNavigate  } from "react-router-dom";
 
 export const NavBar = () => {
     const location = useLocation();
+    const navigate = useNavigate();
   return (
     <nav>
-    <ul>
-      <li><NavLink to="/">Home</NavLink></li>
-      <li><NavLink to="/trails">All Trails</NavLink></li>
-      <li><NavLink to="/trails?filter=favorites">Favorite Trails</NavLink></li>
-    </ul>
+    
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/trails">All Trails</NavLink>
+      <NavLink to="/trails?filter=favorites">Favorite Trails</NavLink>
+    
   </nav>
   );
 };

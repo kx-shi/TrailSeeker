@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import TrailContainer from './TrailContainer';
+import {TrailContainer} from './TrailContainer';
+import { NavBar } from './NavBar';
 
-function HomePage({ userLocation }) {
+export const HomePage = ({ userLocation }) => {
     const [trails, setTrails] = useState(null); // State for storing trail data from our first API request for a specific location
     const [trailObjects, setTrailObjects] = useState([]); // State for storing detailed trail objects, we will pass these to container to use them inside there
     const [isLoading, setIsLoading] = useState(true); // State for loading status (we can use it later for better user experience)
@@ -108,6 +109,7 @@ function HomePage({ userLocation }) {
     // Rendering zone might require some update
     return (
         <div>
+            <NavBar/>
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
             {!isLoading && trails === null && !error && (
@@ -124,4 +126,3 @@ function HomePage({ userLocation }) {
     );
 }
 
-export default HomePage;
