@@ -7,6 +7,7 @@ export const HomePage = ({ userLocation }) => {
     const [trailObjects, setTrailObjects] = useState([]); // State for storing detailed trail objects, we will pass these to container to use them inside there
     const [isLoading, setIsLoading] = useState(true); // State for loading status (we can use it later for better user experience)
     const [error, setError] = useState(null); 
+    const [filteredTrails, setFilteredTrails] = useState(/* ... */);
 
     // Effect to fetch trail data when user location changes (we might change this to another style)
     useEffect(() => {
@@ -69,7 +70,7 @@ export const HomePage = ({ userLocation }) => {
             setTrailObjects(trailObjectArray);
 
             setTimeout(() => {
-                console.log('Tour Array', trailObjectArray);
+                // console.log('Tour Array', trailObjectArray);
             }, 700); // to get one log for not to confuse
         } catch (error) {
             console.error('Error fetching trail objects:', error);
@@ -109,7 +110,7 @@ export const HomePage = ({ userLocation }) => {
     // Rendering zone might require some update
     return (
         <div>
-            <NavBar/>
+            <NavBar  trailObjects={trailObjects} setFilteredTrails={setFilteredTrails}  />
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
             {!isLoading && trails === null && !error && (

@@ -4,11 +4,13 @@ import{ HomePage } from "./components/HomePage";
 
 export const routes = () => {
   const userLocation = "18.0649,59.3293";
+  const favorites = true;
+const children= true;
   return (
     <Routes>
       <Route path="/" element={<HomePage userLocation ={userLocation} />} />
-      <Route path="/trail" element={<HomePage />} />
-      <Route path="/trails/:id" element={<HomePage />} />
+      <Route path="/favorites" element={<HomePage favorites={favorites} />} />
+      <Route path="/children" element={<HomePage children={children} />} />
     </Routes>
   );
 };
