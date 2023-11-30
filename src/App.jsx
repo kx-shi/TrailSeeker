@@ -1,11 +1,24 @@
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from 'react-redux'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import './App.css'
 import { routes } from "./routes";
+import { dummy } from './reducers/dummy'
+
+// TODO: When several reducers exists, combine them into 'one'
+const reducer = combineReducers({
+  dummy: dummy.reducer
+})
+
+const store = configureStore({ reducer })
+
 
 function App() {
   // I used hardcoded location for now (Stockholm)
   return (
-    <BrowserRouter>{routes()}</BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>{routes()}</BrowserRouter>
+    </Provider>
     
     // <>
     //   <h1>TrailSeeker</h1>
