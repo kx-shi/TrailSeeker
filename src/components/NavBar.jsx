@@ -15,4 +15,3 @@ export const NavBar = () => {
 };
 
 
-// The names are just examples
