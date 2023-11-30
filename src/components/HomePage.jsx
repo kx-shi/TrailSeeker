@@ -118,7 +118,7 @@ export const HomePage = ({ userLocation }) => {
             {!isLoading && trails !== null && (
                 <div>
                     <p>Trails:</p>
-                    <TrailContainer trailObjects={trailObjects} />
+                        <TrailContainer trailObjects={trailObjects} />
                     <p>Trail Objects:</p>
                 </div>
             )}

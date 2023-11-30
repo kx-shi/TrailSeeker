@@ -1,14 +1,15 @@
 import React from 'react';
-
+import '../styles/TrailContainer.css'
 //import TrailCard from './TrailCard';
 
 export const TrailContainer = ({ trailObjects }) => {
   return (
-    <div>
+    <div className="trail-container">
       <h2>Trails Near Stockholm</h2>
-      <div>
-    
-      </div>
+        <div className="card-container">
+          <p>One trail</p>
+          <p>Another trail</p>
+        </div>
     </div>
   );
 };

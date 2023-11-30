@@ -1,9 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import './App.css'
 import { routes } from "./routes";
 import { dummy } from './reducers/dummy'
+
+// Styles imports
+import './App.css'
+import './styles/style.css'
 
 // TODO: When several reducers exists, combine them into 'one'
 const reducer = combineReducers({
@@ -17,7 +20,9 @@ function App() {
   // I used hardcoded location for now (Stockholm)
   return (
     <Provider store={store}>
-      <BrowserRouter>{routes()}</BrowserRouter>
+      <div className="app">
+        <BrowserRouter>{routes()}</BrowserRouter>
+      </div>
     </Provider>
     
     // <>
