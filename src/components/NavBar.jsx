@@ -1,34 +1,29 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export const NavBar = ({ trailObjects, setFilteredTrails }) => {
+export const NavBar = ({ trailObjects, setTrailObjects,setBackupTrailObjects,backupTrailObjects }) => {
   const [difficultyFilter, setDifficultyFilter] = useState([]);
   const [ratingFilter, setRatingFilter] = useState([]);
   const [rankingFilter, setRankingFilter] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
-
+  let filteredTrails ={};
   const handleFilter = () => {
-    const filteredTrails = trailObjects.filter((trail) => {
-      const meetsDifficulty =
-      difficultyFilter === null ||
-      (trail.difficulties &&
-        Array.isArray(trail.difficulties) &&
-        trail.difficulties.some(difficulty => difficulty && difficulty.value.toString() === difficultyFilter.toString()));
-   
-      const meetsRating =
-        ratingFilter === null || trail.rating.condition >= ratingFilter;
-      const meetsRanking =
-        rankingFilter === null || trail.ranking >= rankingFilter;
-        console.log("difficultyFilter", difficultyFilter);
-        console.log("trail.difficulties", trail.difficulties);
-        console.log("meetsDifficulty", meetsDifficulty);
-      return meetsDifficulty && meetsRating && meetsRanking;
-    });
-
-    setFilteredTrails(filteredTrails);
+    handleRestoreOriginal()
+    setBackupTrailObjects([...trailObjects]);
+if (difficultyFilter.length>0 ){
+  const difficulties = trailObjects.filter((trail) => trail.difficulties);
+ filteredTrails = difficulties.filter((d)=>d.difficulties.difficulty[0].value===difficultyFilter)
+}
+  console.log("filtereed", filteredTrails)
+  setTrailObjects(filteredTrails);
   };
-
+  const handleRestoreOriginal = () => {
+    if (backupTrailObjects) {
+      setTrailObjects(backupTrailObjects);
+      setBackupTrailObjects(null);
+    }
+  }
   const goToHomePage = () => {
     navigate("/", { state: { userLocation: "18.0649,59.3293" } });
   };

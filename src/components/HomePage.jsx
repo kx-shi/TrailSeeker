@@ -3,11 +3,13 @@ import {TrailContainer} from './TrailContainer';
 import { NavBar } from './NavBar';
 
 export const HomePage = ({ userLocation }) => {
+    
+    const [backupTrailObjects, setBackupTrailObjects] = useState(null);
     const [trails, setTrails] = useState(null); // State for storing trail data from our first API request for a specific location
     const [trailObjects, setTrailObjects] = useState([]); // State for storing detailed trail objects, we will pass these to container to use them inside there
     const [isLoading, setIsLoading] = useState(true); // State for loading status (we can use it later for better user experience)
     const [error, setError] = useState(null); 
-    const [filteredTrails, setFilteredTrails] = useState(/* ... */);
+   
 
     // Effect to fetch trail data when user location changes (we might change this to another style)
     useEffect(() => {
@@ -110,7 +112,7 @@ export const HomePage = ({ userLocation }) => {
     // Rendering zone might require some update
     return (
         <div>
-            <NavBar  trailObjects={trailObjects} setFilteredTrails={setFilteredTrails}  />
+            <NavBar  trailObjects={trailObjects} setTrailObjects={setTrailObjects} setBackupTrailObjects={setBackupTrailObjects}backupTrailObjects={backupTrailObjects} />
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
             {!isLoading && trails === null && !error && (
