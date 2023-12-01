@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
 export const Heart = () => {
-  const [liked, setLiked] = useState(false);
+  const [liked, setLiked] = useState(false); /**get state from store */
 
   const setHeartSymbol = () => {
     if (liked === false) {
       setLiked(true);
-      console.log("if liked", liked);
     } else if (liked === true) {
       setLiked(false);
     }
