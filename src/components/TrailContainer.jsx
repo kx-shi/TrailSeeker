@@ -1,15 +1,33 @@
 import React from 'react';
+import { TrailCard } from "./TrailCard.jsx";
+import "../styles/TrailContainer.css";
 
-//import TrailCard from './TrailCard';
 
-export const TrailContainer = ({ trailObjects }) => {
+
+
+export const TrailContainer = ({trailObjects}) => {
   return (
-    <div>
-      <h2>Trails Near Stockholm</h2>
-      <div>
-    
+    <div className="trail-container">
+        {trailObjects.map((trail) => (
+          <div key={trail.id}>
+       <TrailCard trailObject={trail} />
+        </div>
+        ))}
       </div>
-    </div>
-  );
-};
+    );
+  }
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
 

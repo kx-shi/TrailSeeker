@@ -1,0 +1,7 @@
+
+.trail-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 40px;
+    overflow: auto;
+  }
