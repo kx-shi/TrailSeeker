@@ -78,14 +78,9 @@ export const NavBar = ({
       />
       <button onClick={handleApplyFilter}>Apply Filters</button>
       <button onClick={goToHomePage}>Go to Home</button>
+      <NavLink to="/trails-page">TrailPage</NavLink>
     </div>
       
-       <nav>
-   
-    //     <NavLink to="/">Home</NavLink>
-    //     <NavLink to="/trails">All Trails</NavLink>
-    //     <NavLink to="/trails?filter=favorites">Favorite Trails</NavLink>
-
-   </nav>
+      
   );
 };
