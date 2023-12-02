@@ -6,10 +6,10 @@ export const NavBar = () => {
   const navigate = useNavigate();
   return (
     <nav>
-      <NavLink to="/"><p>Home</p></NavLink>
-      <NavLink to="/trails"><p>All Trails</p></NavLink>
-      <NavLink to="/trails?filter=favorites"><p>Favorite Trails</p></NavLink>
-      <NavLink to="/trails-page"><p>TrailPage</p></NavLink>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/trails">All Trails</NavLink>
+      <NavLink to="/trails?filter=favorites">Favorite Trails</NavLink>
+      <NavLink to="/trails-page">TrailPage</NavLink>
     </nav>
   );
 };
