@@ -5,7 +5,6 @@ import { routes } from "./routes";
 import { dummy } from './reducers/dummy'
 
 // Styles imports
-import './App.css'
 import './styles/style.css'
 
 // TODO: When several reducers exists, combine them into 'one'
@@ -21,6 +20,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
+        <h1>TrailSeeker</h1>
         <BrowserRouter>{routes()}</BrowserRouter>
       </div>
     </Provider>

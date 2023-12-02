@@ -1,7 +1,40 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    background-color: #373D20;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    height: 100%;
+}
+
 body {
     background-color: #373D20;
 }
 
+.app {
+    width: 100vw;
+    height: auto;
+    min-height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
 h1, h2, h3, h4, h5, h6, p, a {
     color: #EFF1ED;
+}
+
+h1 {
+    font-size: 3.2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
 }

@@ -1,14 +1,21 @@
 import React from 'react';
 import '../styles/TrailContainer.css'
-//import TrailCard from './TrailCard';
+import { TrailCardDummy } from './TrailCardDummy';
 
 export const TrailContainer = ({ trailObjects }) => {
   return (
     <div className="trail-container">
-      <h2>Trails Near Stockholm</h2>
         <div className="card-container">
-          <p>One trail</p>
-          <p>Another trail</p>
+          { 
+            // TODO: Replace below dummy content with <TrailCard /> component
+          }
+          <TrailCardDummy trailName="Some cool trail"/>
+          <TrailCardDummy trailName="Another trail"/>
+          <TrailCardDummy trailName="A third trail"/>
+          <TrailCardDummy trailName="Dummy trail"/>
+          <TrailCardDummy trailName="Maybe very hard trail"/>
+          <TrailCardDummy trailName="Looking trail"/>
+          <TrailCardDummy trailName="Styling trail"/>
         </div>
     </div>
   );
