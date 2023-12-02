@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {TrailContainer} from './TrailContainer';
 import { NavBar } from './NavBar';
+import '../styles/HomePage.css';
 
 export const HomePage = ({ userLocation }) => {
     const [backupTrailObjects, setBackupTrailObjects] = useState(null);
@@ -110,7 +111,7 @@ export const HomePage = ({ userLocation }) => {
     };
     // Rendering zone might require some update
     return (
-        <div>
+        <div className='homepage-container'>
             <NavBar  
                 trailObjects={backupTrailObjects} 
                 setTrailObjects={setTrailObjects} 
@@ -124,9 +125,8 @@ export const HomePage = ({ userLocation }) => {
             )}
             {!isLoading && trails !== null && (
                 <div>
-                    <p>Trails:</p>
+                    <h2>Trails Near Stockholm</h2>
                     <TrailContainer trailObjects={trailObjects} />
-                    <p>Trail Objects:</p>
                 </div>
             )}
         </div>

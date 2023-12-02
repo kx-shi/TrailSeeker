@@ -1,0 +1,12 @@
+nav {
+    display: flex;
+    background-color: #DADBA3;
+    margin: 0 10%;
+    padding: 0.5em;
+    justify-content: center;
+}
+
+nav p {
+    margin: 10px;
+    color: #373D20;
+}

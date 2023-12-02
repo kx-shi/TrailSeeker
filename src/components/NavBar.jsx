@@ -1,5 +1,6 @@
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import '../styles/NavBar.css';
 
 export const NavBar = ({
   trailObjects,
@@ -78,12 +79,13 @@ export const NavBar = ({
       <button onClick={handleApplyFilter}>Apply Filters</button>
       <button onClick={goToHomePage}>Go to Home</button>
     </div>
-    //   <nav>
-
+      
+       <nav>
+   
     //     <NavLink to="/">Home</NavLink>
     //     <NavLink to="/trails">All Trails</NavLink>
     //     <NavLink to="/trails?filter=favorites">Favorite Trails</NavLink>
 
-    // </nav>
+   </nav>
   );
 };
