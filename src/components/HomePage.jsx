@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {TrailContainer} from './TrailContainer';
 import { NavBar } from './NavBar';
+import '../styles/HomePage.css';
 
 export const HomePage = ({ userLocation }) => {
     const [trails, setTrails] = useState(null); // State for storing trail data from our first API request for a specific location
@@ -108,7 +109,7 @@ export const HomePage = ({ userLocation }) => {
     };
     // Rendering zone might require some update
     return (
-        <div>
+        <div className='homepage-container'>
             <NavBar/>
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
@@ -117,9 +118,8 @@ export const HomePage = ({ userLocation }) => {
             )}
             {!isLoading && trails !== null && (
                 <div>
-                    <p>Trails:</p>
+                    <h2>Trails Near Stockholm</h2>
                     <TrailContainer trailObjects={trailObjects} />
-                    <p>Trail Objects:</p>
                 </div>
             )}
         </div>
