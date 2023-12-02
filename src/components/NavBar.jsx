@@ -1,31 +1,43 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export const NavBar = ({ trailObjects, setTrailObjects,setBackupTrailObjects,backupTrailObjects }) => {
+export const NavBar = ({
+  trailObjects,
+  setTrailObjects,
+  backupTrailObjects, 
+  setBackupTrailObjects 
+}) => {
   const [difficultyFilter, setDifficultyFilter] = useState([]);
   const [ratingFilter, setRatingFilter] = useState([]);
   const [rankingFilter, setRankingFilter] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
-  let filteredTrails ={};
+  let filteredTrails = {};
   const handleFilter = () => {
-    handleRestoreOriginal()
     setBackupTrailObjects([...trailObjects]);
-if (difficultyFilter.length>0 ){
-  const difficulties = trailObjects.filter((trail) => trail.difficulties);
- filteredTrails = difficulties.filter((d)=>d.difficulties.difficulty[0].value===difficultyFilter)
-}
-  console.log("filtereed", filteredTrails)
-  setTrailObjects(filteredTrails);
+    if (difficultyFilter.length > 0) {
+      console.log("trailObjects", trailObjects);
+      const difficulties = trailObjects.filter((trail) => trail.difficulties);
+      filteredTrails = difficulties.filter(
+        (d) => d.difficulties.difficulty[0].value === difficultyFilter
+      );
+    }
+    console.log("filtereed", filteredTrails);
+    setTrailObjects(filteredTrails);
   };
   const handleRestoreOriginal = () => {
     if (backupTrailObjects) {
-      setTrailObjects(backupTrailObjects);
+      setTrailObjects([...backupTrailObjects]);
       setBackupTrailObjects(null);
     }
-  }
+  };
   const goToHomePage = () => {
     navigate("/", { state: { userLocation: "18.0649,59.3293" } });
+  };
+
+  const handleApplyFilter = () => {
+    handleRestoreOriginal();
+    handleFilter();
   };
   return (
     <div>
@@ -63,7 +75,7 @@ if (difficultyFilter.length>0 ){
           )
         }
       />
-      <button onClick={handleFilter}>Apply Filters</button>
+      <button onClick={handleApplyFilter}>Apply Filters</button>
       <button onClick={goToHomePage}>Go to Home</button>
     </div>
     //   <nav>

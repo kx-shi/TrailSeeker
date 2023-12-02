@@ -3,7 +3,6 @@ import {TrailContainer} from './TrailContainer';
 import { NavBar } from './NavBar';
 
 export const HomePage = ({ userLocation }) => {
-    
     const [backupTrailObjects, setBackupTrailObjects] = useState(null);
     const [trails, setTrails] = useState(null); // State for storing trail data from our first API request for a specific location
     const [trailObjects, setTrailObjects] = useState([]); // State for storing detailed trail objects, we will pass these to container to use them inside there
@@ -37,7 +36,7 @@ export const HomePage = ({ userLocation }) => {
                     if (data.result && data.result.length > 0) {
                         setTrails(data.result);
                         // Fetching the trail objects here with using ID's
-                        fetchTrailObjects(data.result);
+                        fetchTrailObjects(data.result);           
                     } else {
                         setTrails(null);
                         setError('No trails found for the specified location. Try increasing the search radius.');
@@ -70,7 +69,7 @@ export const HomePage = ({ userLocation }) => {
                 trailObjectArray.push(trailObject);
             }
             setTrailObjects(trailObjectArray);
-
+            setBackupTrailObjects([...trailObjectArray]);
             setTimeout(() => {
                 // console.log('Tour Array', trailObjectArray);
             }, 700); // to get one log for not to confuse
@@ -112,7 +111,12 @@ export const HomePage = ({ userLocation }) => {
     // Rendering zone might require some update
     return (
         <div>
-            <NavBar  trailObjects={trailObjects} setTrailObjects={setTrailObjects} setBackupTrailObjects={setBackupTrailObjects}backupTrailObjects={backupTrailObjects} />
+            <NavBar  
+                trailObjects={backupTrailObjects} 
+                setTrailObjects={setTrailObjects} 
+                backupTrailObjects={backupTrailObjects}
+                setBackupTrailObjects={setBackupTrailObjects}
+                />
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
             {!isLoading && trails === null && !error && (
