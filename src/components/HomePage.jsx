@@ -110,6 +110,7 @@ export const HomePage = ({ userLocation }) => {
         }
     };
     // Rendering zone might require some update
+
     return (
         <div className='homepage-container'>
             <NavBar  
