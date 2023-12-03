@@ -4,14 +4,24 @@ import "../styles/TrailCard.css";
 
 
 
-export const TrailCard = ({ trailObject}) => {
+export const TrailCard = ({ trailObject }) => {
   return (
     <div className="trail-card">
     <Link key={trailObject.id} to={"/"}>
     <img src={`https://img.oastatic.com/img/${trailObject.primaryImage.id}/.jpg`}></img> 
         <h2>{trailObject.title}</h2> 
-        <p>Duration: ({trailObject.time.min})</p>
+
+
+        <p>Duration: {trailObject.time.min}</p>
+
+       let time = Math.floor({trailObject.time.min} / 60);
+
+
      </Link>
      </div>
   );
 };
+
+  /* Change the link to: <Link key={trailObject.id} to={`/trails/${trailObject.id}`}> */ 
+
+
