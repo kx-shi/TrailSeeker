@@ -3,17 +3,19 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import '../styles/NavBar.css';
 
 export const NavBar = ({
-  trailObjects,
-  setTrailObjects,
-  backupTrailObjects, 
-  setBackupTrailObjects 
-}) => {
+    trailObjects,
+    setTrailObjects,
+    backupTrailObjects, 
+    setBackupTrailObjects 
+  }) => {
+  
   const [difficultyFilter, setDifficultyFilter] = useState([]);
   const [ratingFilter, setRatingFilter] = useState([]);
   const [rankingFilter, setRankingFilter] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
   let filteredTrails = {};
+
   const handleFilter = () => {
     setBackupTrailObjects([...trailObjects]);
     if (difficultyFilter.length > 0) {
@@ -23,7 +25,7 @@ export const NavBar = ({
         (d) => d.difficulties.difficulty[0].value === difficultyFilter
       );
     }
-    console.log("filtereed", filteredTrails);
+    console.log("filtered", filteredTrails);
     setTrailObjects(filteredTrails);
   };
   const handleRestoreOriginal = () => {
@@ -40,8 +42,9 @@ export const NavBar = ({
     handleRestoreOriginal();
     handleFilter();
   };
+
   return (
-    <div>
+    <div className="filter-container">
       <select
         value={difficultyFilter || []}
         onChange={(e) =>
@@ -76,8 +79,8 @@ export const NavBar = ({
           )
         }
       />
-      <button onClick={handleApplyFilter}>Apply Filters</button>
-      <button onClick={goToHomePage}>Go to Home</button>
+      <button className="navbar-btn" onClick={handleApplyFilter}>Apply Filters</button>
+      <button className="navbar-btn" onClick={goToHomePage}>Go to Home</button>
       <NavLink to="/trails-page">TrailPage</NavLink>
     </div>
       
