@@ -1,35 +1,22 @@
 import { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import '../styles/NavBar.css';
+import "../styles/NavBar.css";
 
 export const NavBar = ({
   trailObjects,
   setTrailObjects,
-  backupTrailObjects, 
-  setBackupTrailObjects 
+  backupTrailObjects,
+  setBackupTrailObjects,
 }) => {
   const [difficultyFilter, setDifficultyFilter] = useState([]);
   const [ratingFilter, setRatingFilter] = useState([]);
   const [rankingFilter, setRankingFilter] = useState([]);
-  const [selectDifficultyValue, setSelectDifficultyValue] = useState("");
-const [selectRatingValue, setSelectRatingValue] = useState("");
 
   const location = useLocation();
   const navigate = useNavigate();
   let filteredTrails = {};
 
-  const handleSelectDifficultyChange = (e) => {
-    setSelectRatingValue("");
-    setSelectDifficultyValue(e.target.value);
-  };
-  
-  const handleSelectRatingChange = (e) => {
-    setSelectDifficultyValue("");
-    setSelectRatingValue(e.target.value);
-  };
-  
   const handleFilter = () => {
-   
     setBackupTrailObjects([...trailObjects]);
     if (difficultyFilter.length > 0) {
       const difficulties = trailObjects.filter((trail) => trail.difficulties);
@@ -37,11 +24,13 @@ const [selectRatingValue, setSelectRatingValue] = useState("");
         (d) => d.difficulties.difficulty[0].value === difficultyFilter
       );
     }
-   
+
     if (ratingFilter.length > 0) {
       console.log(typeof trailObjects[0].rating.qualityOfExperience);
       console.log(typeof ratingFilter);
-      filteredTrails = trailObjects.filter(trail => trail.rating.qualityOfExperience.toString()===ratingFilter)
+      filteredTrails = trailObjects.filter(
+        (trail) => trail.rating.qualityOfExperience.toString() === ratingFilter
+      );
     }
     console.log("filtereed", filteredTrails);
     setTrailObjects(filteredTrails);
@@ -61,17 +50,14 @@ const [selectRatingValue, setSelectRatingValue] = useState("");
     handleFilter();
   };
 
-  
   return (
     <div>
       <select
         value={difficultyFilter || []}
-        onChange={(e) =>{
-          setRatingFilter("")
-           setDifficultyFilter(e.target.value === "" ? null : e.target.value)
-        }
-         
-        }
+        onChange={(e) => {
+          setRatingFilter("");
+          setDifficultyFilter(e.target.value === "" ? null : e.target.value);
+        }}
       >
         <option value="">All Difficulties</option>
         <option value="1">1</option>
@@ -82,12 +68,10 @@ const [selectRatingValue, setSelectRatingValue] = useState("");
       </select>
       <select
         value={ratingFilter || []}
-        onChange={(e) =>{
-          setDifficultyFilter(""); 
-           setRatingFilter(e.target.value === "" ? null : e.target.value)
-        }
-         
-        }
+        onChange={(e) => {
+          setDifficultyFilter("");
+          setRatingFilter(e.target.value === "" ? null : e.target.value);
+        }}
       >
         <option value="">All Ratings</option>
         <option value="1">1</option>
@@ -111,7 +95,5 @@ const [selectRatingValue, setSelectRatingValue] = useState("");
       <button onClick={goToHomePage}>Go to Home</button>
       <NavLink to="/trails-page">TrailPage</NavLink>
     </div>
-      
-      
   );
 };
