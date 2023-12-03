@@ -107,6 +107,7 @@ export const HomePage = ({ userLocation }) => {
         }
     };
     // Rendering zone might require some update
+
     return (
         <div>
             <NavBar/>

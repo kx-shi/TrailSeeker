@@ -7,3 +7,9 @@
     height: 260px;
     overflow: hidden;
   }
+
+
+img.activity-category {
+    width: 2em;
+    height: 2em;
+}
