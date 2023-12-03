@@ -2,7 +2,8 @@ import React from 'react';
 import '../styles/TrailContainer.css'
 import { TrailCard } from './TrailCard';
 
-export const TrailContainer = ({trailObjects}) => {
+export const TrailContainer = ({ trailObjects }) => {
+  console.log(trailObjects);
   return (
     <div className="trail-container">
       <div className="card-container">
