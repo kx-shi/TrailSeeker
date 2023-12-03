@@ -3,6 +3,7 @@ import '../styles/TrailContainer.css'
 import { TrailCardDummy } from './TrailCardDummy';
 
 export const TrailContainer = ({ trailObjects }) => {
+  console.log(trailObjects);
   return (
     <div className="trail-container">
         <div className="card-container">
