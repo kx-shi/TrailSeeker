@@ -1,19 +1,20 @@
 import { BrowserRouter } from "react-router-dom";
-import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { Provider } from "react-redux";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { routes } from "./routes";
-import { dummy } from './reducers/dummy'
+import { dummy } from "./reducers/dummy";
+import { like } from "./reducers/heart";
 
 // Styles imports
-import './styles/style.css'
+import "./styles/style.css";
 
 // TODO: When several reducers exists, combine them into 'one'
 const reducer = combineReducers({
-  dummy: dummy.reducer
-})
+  dummy: dummy.reducer,
+  like: like.reducer,
+});
 
-const store = configureStore({ reducer })
-
+const store = configureStore({ reducer });
 
 function App() {
   // I used hardcoded location for now (Stockholm)
@@ -24,12 +25,12 @@ function App() {
         <BrowserRouter>{routes()}</BrowserRouter>
       </div>
     </Provider>
-    
+
     // <>
     //   <h1>TrailSeeker</h1>
     //   <HomePage userLocation="18.0649,59.3293" />
     // </>
-  )
+  );
 }
 
-export default App
+export default App;
