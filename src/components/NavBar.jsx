@@ -13,11 +13,12 @@ export const NavBar = ({
   };
 
   return (
-    <div>
-     <NavLink to="/" onClick={goToHomePage} activeClassName="active-link">
+   <div><button className="navbar-btn" onClick={handleApplyFilter}>Apply Filters</button>
+   <button className="navbar-btn" onClick={goToHomePage}>Go to Home</button>     <NavLink to="/" onClick={goToHomePage} activeClassName="active-link">
         Go to Home
       </NavLink>
-      <NavLink to="/trails-page" activeClassName="active-link" >TrailPage</NavLink>
-    </div>
+      <NavLink to="/trails-page" activeClassName="active-link" >TrailPage</NavLink></div>
+
+
   );
 };
