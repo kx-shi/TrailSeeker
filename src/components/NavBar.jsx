@@ -13,7 +13,7 @@ export const NavBar = ({
   };
 
   return (
-   <div><button className="navbar-btn" onClick={handleApplyFilter}>Apply Filters</button>
+   <div>
    <button className="navbar-btn" onClick={goToHomePage}>Go to Home</button>     <NavLink to="/" onClick={goToHomePage} activeClassName="active-link">
         Go to Home
       </NavLink>
