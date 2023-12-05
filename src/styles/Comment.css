@@ -1,0 +1,26 @@
+.comment-container {
+    text-align: left;
+}
+
+.comment {
+    background-color: #DADBA3;
+    width: 50%;
+    margin: 10px auto;
+    padding: 1em;
+}
+
+.comment > h2, .comment > p {
+    color: #766153;
+    margin: 0;
+}
+
+.comment-form {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.comment-input {
+    width: 500px;
+    height: 200px;
+}

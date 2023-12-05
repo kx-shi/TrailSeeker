@@ -2,14 +2,14 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { routes } from "./routes";
-import { dummy } from './reducers/dummy'
+import { comments } from './reducers/comments'
 
 // Styles imports
 import './styles/style.css'
 
 // TODO: When several reducers exists, combine them into 'one'
 const reducer = combineReducers({
-  dummy: dummy.reducer
+  comments: comments.reducer
 })
 
 const store = configureStore({ reducer })

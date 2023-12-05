@@ -25,10 +25,16 @@ export const comments = createSlice({
          * comment that includes the payload
          */
         createComment: (state, action) => {
-            const { author, content } = action.payload;
+            const { id, author, content } = action.payload;
             const timestamp = new Date().toLocaleString();
 
             // TODO: Add logic
+            state.commentList.push({
+                id,
+                content,
+                timestamp,
+                author
+            });
         }
     }
 });

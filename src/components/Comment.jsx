@@ -1,6 +1,7 @@
 /**
  * Component for one comment
  */
+import '../styles/Comment.css'
 
 export const Comment = ( {comment} ) => {
     return(
