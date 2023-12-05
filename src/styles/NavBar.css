@@ -39,3 +39,7 @@ nav p {
         display: inline;
     }
 }
+
+.active-link {
+    color: red;
+  }

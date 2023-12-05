@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {TrailContainer} from './TrailContainer';
 import { NavBar } from './NavBar';
+import { Filter } from './Filter';
 import '../styles/HomePage.css';
 
 export const HomePage = ({ userLocation }) => {
@@ -113,7 +114,8 @@ export const HomePage = ({ userLocation }) => {
 
     return (
         <div className='homepage-container'>
-            <NavBar  
+            <NavBar/>
+                <Filter
                 trailObjects={backupTrailObjects} 
                 setTrailObjects={setTrailObjects} 
                 backupTrailObjects={backupTrailObjects}
