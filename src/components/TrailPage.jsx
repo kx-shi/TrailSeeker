@@ -1,5 +1,6 @@
 import React from "react";
 import { Heart } from "./Heart";
+import { CommentContainer } from "./CommentContainer";
 import { NavBar } from "./NavBar";
 
 export const TrailPage = () => {
@@ -8,6 +9,7 @@ export const TrailPage = () => {
       <div>TrailPage</div>
       <NavBar/>
       <Heart />
+      <CommentContainer />
     </div>
   );
 };
