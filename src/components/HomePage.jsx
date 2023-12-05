@@ -114,12 +114,7 @@ export const HomePage = ({ userLocation }) => {
 
     return (
         <div className='homepage-container'>
-            <NavBar  
-                trailObjects={backupTrailObjects} 
-                setTrailObjects={setTrailObjects} 
-                backupTrailObjects={backupTrailObjects}
-                setBackupTrailObjects={setBackupTrailObjects}
-                />
+            <NavBar/>
                 <Filter
                 trailObjects={backupTrailObjects} 
                 setTrailObjects={setTrailObjects} 

@@ -10,3 +10,6 @@ nav p {
     margin: 10px;
     color: #373D20;
 }
+.active-link {
+    color: red;
+  }
