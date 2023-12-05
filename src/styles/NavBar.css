@@ -30,15 +30,6 @@ nav p {
     background-color: #BCBD8B;
 }
 
-.filter-container > select, input, button {
-    margin: 0 5px;
-}
-
-@media screen and (min-width: 700px) {
-    .filter-container { /* div for section that displays all trail cards */
-        display: inline;
-    }
-}
 
 .active-link {
     color: red;

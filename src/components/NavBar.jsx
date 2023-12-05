@@ -13,11 +13,10 @@ export const NavBar = ({
   };
 
   return (
-   <div><button className="navbar-btn" onClick={handleApplyFilter}>Apply Filters</button>
-   <button className="navbar-btn" onClick={goToHomePage}>Go to Home</button>     <NavLink to="/" onClick={goToHomePage} activeClassName="active-link">
+   <div>    <NavLink  className="navbar-btn" to="/" onClick={goToHomePage}>
         Go to Home
       </NavLink>
-      <NavLink to="/trails-page" activeClassName="active-link" >TrailPage</NavLink></div>
+      <NavLink  className="navbar-btn" to="/trails-page" >TrailPage</NavLink></div>
 
 
   );
