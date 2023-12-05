@@ -6,7 +6,7 @@ The trails displayed include information such as name of the trail, location, le
 
 # Design Specs
 **Colour palette** \
-#766153 \
+#766153 - dark brown \
 #DADBA3 - light green \
 #BCBD8B \
 #EFF1ED - off-white \
