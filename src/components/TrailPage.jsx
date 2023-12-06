@@ -3,6 +3,7 @@ import { Heart } from "./Heart";
 import { CommentContainer } from "./CommentContainer";
 import { NavBar } from "./NavBar";
 import { useParams } from "react-router-dom";
+import TrailDetails from "./TrailDetails";
 
 export const TrailPage = () => {
   const { trailId } = useParams();
@@ -10,7 +11,7 @@ export const TrailPage = () => {
     <div>
       <div>TrailPage</div>
       <NavBar/>
-      <h1>Trail ID: {trailId}</h1>
+      <TrailDetails trailId={trailId} />
       <Heart />
       <CommentContainer />
     </div>

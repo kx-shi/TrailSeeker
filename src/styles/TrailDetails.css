@@ -1,0 +1,55 @@
+.trail-details {
+  font-family: "Arial", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255);
+}
+
+.trail-overview {
+  margin-bottom: 20px;
+}
+
+.trail-overview h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.trail-elevation-profile img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.trail-description {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.trail-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.trail-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.trail-additional-info {
+  margin-top: 20px;
+}
+
+.trail-details h1,
+.trail-details h2,
+.trail-details h3,
+.trail-details h4,
+.trail-details h5,
+.trail-details h6,
+.trail-details p,
+.trail-details a {
+  color: black;
+}
