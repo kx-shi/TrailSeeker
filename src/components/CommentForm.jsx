@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { comments } from "../reducers/comments";
 import { v4 as uuidv4 } from 'uuid';
 import '../styles/Comment.css';
-import { v4 as uuidv4 } from 'uuid';
 
 export const CommentForm = ( {trailID} ) => {
     const [content, setContent] = useState('');
