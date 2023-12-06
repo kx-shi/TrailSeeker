@@ -33,6 +33,8 @@ export const comments = createSlice({
          * This action is used by the user to create a comment
          * The payload needs to include the following:
          * 
+         *      id: ID of the comment, generated using uuidv4
+         *      trailID: ID of the specific trail
          *      author: Alias of the commenter
          *      content: Content of the comment
          * 
