@@ -1,9 +1,11 @@
 /**
- * Component for handling commenting logic
+ * Component for handling user comment function
+ * Uses 'createComment'-action from reducers/comments
  */
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { comments } from "../reducers/comments";
+import { v4 as uuidv4 } from 'uuid';
 import '../styles/Comment.css';
 
 export const CommentForm = () => {

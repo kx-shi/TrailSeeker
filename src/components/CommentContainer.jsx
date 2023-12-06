@@ -1,5 +1,5 @@
 /**
- * Component for container that will map over comments
+ * Component for container that maps over comments related to specific trail with trailID
  */
 import React from "react";
 import { useSelector } from "react-redux";
