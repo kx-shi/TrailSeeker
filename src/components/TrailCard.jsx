@@ -8,12 +8,13 @@ export const TrailCard = ({ trailObject }) => {
     <div className="trail-card">
       <Link key={trailObject.id} to={"/"}>
         <img
+          className="card-img"
           src={`https://img.oastatic.com/img/${trailObject.primaryImage.id}/.jpg`}
           alt={trailObject.title}
         ></img>
         <h2>{trailObject.title}</h2>
       </Link>
-      <p>
+      <p className="duration">
         Duration: {Math.floor(trailObject.time.min / 60)} h{" "}
         {trailObject.time.min % 60} min
       </p>
@@ -23,7 +24,6 @@ export const TrailCard = ({ trailObject }) => {
         alt={trailObject.category.name}
         title={trailObject.category.name}
       ></img>
-      <Heart />
     </div>
   );
 };

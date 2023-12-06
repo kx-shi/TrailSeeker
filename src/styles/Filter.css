@@ -1,0 +1,18 @@
+.filter-selects{
+   margin: 5px;
+    background-position: right 8px top 6px;
+    background-size: 18px;
+    border-radius: 8px;
+    padding: 5px 33px 5px 15px;
+    
+}
+
+.filter-container > select {
+    margin: 40px 5px;
+}
+
+@media screen and (min-width: 700px) {
+    .filter-container { /* div for section that displays all trail cards */
+        display: inline;
+    }
+}

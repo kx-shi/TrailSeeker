@@ -4,9 +4,33 @@ nav {
     margin: 0 10%;
     padding: 0.5em;
     justify-content: center;
+    gap: 20px;
 }
 
 nav p {
     margin: 10px;
     color: #373D20;
 }
+
+.filter-container {
+    display: block;
+}
+
+.navbar-btn {
+    background-color: #DADBA3;
+    color: #766153;
+	border: none;
+	padding: 0.5em 1em;
+	cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid #766153;
+}
+
+.navbar-btn:hover {
+    background-color: #BCBD8B;
+}
+
+
+.active-link {
+    color: red;
+  }
