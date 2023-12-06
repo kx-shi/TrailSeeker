@@ -1,8 +1,8 @@
 .trail-details {
   font-family: "Arial", sans-serif;
-  max-width: 800px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2vw; /* Adjust as needed */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: rgb(255, 255, 255);
 }

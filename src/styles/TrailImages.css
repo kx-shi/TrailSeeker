@@ -1,0 +1,58 @@
+.trail-images-unique {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trail-images-unique .image-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  border: 2px solid #12b43d;
+  border-radius: 5px;
+}
+
+.trail-images-unique .arrow {
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0 10px;
+}
+
+.trail-images-unique .photo-box {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.trail-images-unique .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trail-images-unique .information-box {
+  margin-top: 3px;
+  border: 2px solid #12b43d;
+  width: 100%;
+  text-align: center;
+  font-size: x-small;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+/* Updated styles for information box */
+.trail-images-unique .information-box p {
+  margin: 8px 0;
+  font-weight: bold;
+  font-size: x-small;
+}

@@ -54,10 +54,11 @@ const TrailDetails = ({ trailId }) => {
   return (
     <div className="trail-details">
       <TrailOverview data={trailData} />
+      <TrailImages images={trailData.images} />
       <TrailElevationProfile elevationData={trailData.elevationProfile} />
       <img src={`https://www.outdooractive.com/api/staticmap?i=${trailId}&size=medium&project=outdooractive`} alt="Trail Map"/>
       <TrailDescription description={trailData.longText} />
-      <TrailImages images={trailData.images} />
+
       <TrailAdditionalInfo additionalInfo={trailData.additionalInformation} />
       
     </div>
