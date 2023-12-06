@@ -1,5 +1,5 @@
 /**
- * Component for one comment
+ * Component for a single comment
  */
 import '../styles/Comment.css'
 
