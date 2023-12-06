@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const Heart = (isLiked) => {
+export const Heart = (trailId) => {
   const [liked, setLiked] = useState(false); /**get state from store */
 
   const setHeartSymbol = () => {
