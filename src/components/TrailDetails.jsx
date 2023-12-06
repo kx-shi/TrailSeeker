@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import GeneralInformation from "./TrailDetailsPart/GeneralInformation";
 import TrailOverview from "./TrailDetailsPart/TrailOverview";
 import TrailElevationProfile from "./TrailDetailsPart/TrailElevationProfile";
 import TrailDescription from "./TrailDetailsPart/TrailDescription";
+import TrailDescriptionInfo from "./TrailDetailsPart/TrailDescriptionInfo";
 import TrailImages from "./TrailDetailsPart/TrailImages";
 import TrailAdditionalInfo from "./TrailDetailsPart/TrailAdditionalInfo";
-import '../styles/TrailDetails.css';
+import "../styles/TrailDetails.css";
 
 const TrailDetails = ({ trailId }) => {
   const [trailData, setTrailData] = useState(null);
@@ -30,7 +32,7 @@ const TrailDetails = ({ trailId }) => {
         const data = await response.json();
         if (data.tour && data.tour.length > 0) {
           setTrailData(data.tour[0]);
-          console.log('OZAN', data.tour[0]);
+          console.log("OZAN", data.tour[0]);
         } else {
           console.error("Invalid trail data:", data);
           setTrailData(null);
@@ -48,19 +50,30 @@ const TrailDetails = ({ trailId }) => {
     return <p>Loading trail data...</p>;
   }
 
-  
-
-  // You can now use trailData in your component
   return (
     <div className="trail-details">
       <TrailOverview data={trailData} />
+      <GeneralInformation
+        category={trailData.category}
+        difficulty={trailData.difficulties}
+        elevation={trailData.elevation}
+        time={trailData.time}
+        rating={trailData.rating}
+        season={trailData.season}
+        length={trailData.length}
+      />
       <TrailImages images={trailData.images} />
       <TrailElevationProfile elevationData={trailData.elevationProfile} />
-      <img src={`https://www.outdooractive.com/api/staticmap?i=${trailId}&size=medium&project=outdooractive`} alt="Trail Map"/>
+      <img
+        src={`https://www.outdooractive.com/api/staticmap?i=${trailId}&size=medium&project=outdooractive`}
+        alt="Trail Map"
+      />
       <TrailDescription description={trailData.longText} />
-
+      <TrailDescriptionInfo
+        gettingThere={trailData.gettingThere}
+        tips={trailData.tips}
+      />
       <TrailAdditionalInfo additionalInfo={trailData.additionalInformation} />
-      
     </div>
   );
 };
