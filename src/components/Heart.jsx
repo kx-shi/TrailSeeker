@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../styles/Heart.css';
 
 export const Heart = () => {
   const [liked, setLiked] = useState(false); /**get state from store */
@@ -14,8 +15,8 @@ export const Heart = () => {
   return (
     <div>
       <button className="heart" onClick={() => setHeartSymbol()}>
-        <div>{liked === true && "❤️"}</div>
-        <div>{liked === false && "🤍"}</div>
+        <div>{liked === true && "♥"}</div>
+        <div>{liked === false && "♡"}</div>
       </button>
     </div>
   );
