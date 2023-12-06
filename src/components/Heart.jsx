@@ -3,25 +3,20 @@ import "../styles/Heart.css";
 import { useSelector, useDispatch } from "react-redux";
 import { like } from "../reducers/heart";
 
-export const Heart = ( {trailID} ) => {
-  const [liked, setLiked] = useState(false); /**get state from store */
+export const Heart = ({ trailID }) => {
+  const [liked, setLiked] = useState(false);
   const likes = useSelector((state) => state.like.likedList);
   const dispatch = useDispatch();
 
   const setHeartSymbol = () => {
-    dispatch(like.actions.toggleHeart( { id: trailID } ));
-    // if (liked === false) {
-    //   setLiked(true);
-    // } else if (liked === true) {
-    //   setLiked(false);
-    // }
+    dispatch(like.actions.toggleHeart({ id: trailID }));
   };
 
   useEffect(() => {
     const likeObject = likes.find((el) => el.id === trailID);
     if (likeObject != undefined) {
       setLiked(likeObject.isLiked);
-    }else {
+    } else {
       setLiked(false);
     }
   });
@@ -35,8 +30,3 @@ export const Heart = ( {trailID} ) => {
     </div>
   );
 };
-
-// useEffect(() => {
-//   // Update the document title using the browser API
-//   document.title = `You clicked ${count} times`;
-// });
