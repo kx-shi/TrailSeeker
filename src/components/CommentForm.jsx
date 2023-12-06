@@ -1,12 +1,14 @@
 /**
- * Component for handling commenting logic
+ * Component for handling user comment function
+ * Uses'createComment'-action from reducers/comments
  */
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { comments } from "../reducers/comments";
+import { v4 as uuidv4 } from 'uuid';
 import '../styles/Comment.css';
 
-export const CommentForm = () => {
+export const CommentForm = ( {trailID} ) => {
     const [content, setContent] = useState('');
     const [name, setName] = useState('');
     const dispatch = useDispatch();
@@ -27,7 +29,7 @@ export const CommentForm = () => {
     const handleCommentSubmit = (e) => {
       e.preventDefault();
       console.log("ayy")
-      dispatch(comments.actions.createComment( { id: 4, author: name, content: content } ));
+      dispatch(comments.actions.createComment( { id: uuidv4(), trailID: trailID, author: name, content: content } ));
     }
 
     return(
