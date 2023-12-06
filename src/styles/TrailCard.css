@@ -4,6 +4,12 @@
   margin: 20px;
 }
 
+.trail-card-flex {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .trail-card h2{
   margin: 0;
   font-size: 1.2em;

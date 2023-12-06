@@ -18,13 +18,15 @@ export const TrailCard = ({ trailObject }) => {
         Duration: {Math.floor(trailObject.time.min / 60)} h{" "}
         {trailObject.time.min % 60} min
       </p>
-      <img
-        className="activity-category"
-        src={trailObject.category.iconUrl}
-        alt={trailObject.category.name}
-        title={trailObject.category.name}
-      ></img>
-      <Heart trailID={trailObject.id}/>
+      <div className="trail-card-flex">
+        <img
+          className="activity-category"
+          src={trailObject.category.iconUrl}
+          alt={trailObject.category.name}
+          title={trailObject.category.name}
+        ></img>
+        <Heart trailID={trailObject.id}/>
+      </div>
     </div>
   );
 };
