@@ -16,7 +16,7 @@ export const NavBar = ({
    <div>    <NavLink  className="navbar-btn" to="/" onClick={goToHomePage}>
         Go to Home
       </NavLink>
-      <NavLink  className="navbar-btn" to="/trails-page" >TrailPage</NavLink></div>
+      <NavLink  className="navbar-btn" to="/trails-page" >MyTrailsPage</NavLink></div>
 
 
   );

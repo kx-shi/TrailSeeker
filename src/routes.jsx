@@ -10,7 +10,7 @@ const children= true;
     <Routes>
       <Route path="/" element={<HomePage userLocation={userLocation} />} />
       <Route path="/trail" element={<HomePage />} />
-      <Route path="/trails/:id" element={<HomePage />} />
+      <Route path="/trails/:trailId" element={<TrailPage />} />
       <Route path="/trails-page" element={<TrailPage />} />
     </Routes>
   );
