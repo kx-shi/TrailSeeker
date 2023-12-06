@@ -5,7 +5,8 @@ import "../styles/TrailContainer.css";
 
 
 
-export const TrailContainer = ({trailObjects}) => {
+export const TrailContainer = ({ trailObjects }) => {
+  console.log(trailObjects);
   return (
     <div className="trail-container">
         {trailObjects.map((trail) => (

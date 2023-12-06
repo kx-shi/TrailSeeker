@@ -13,3 +13,48 @@ img.activity-category {
     width: 2em;
     height: 2em;
 }
+
+.trail-card {
+  text-align: left;
+  margin: 20px;
+}
+
+.trail-card h2{
+  margin: 0;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.trail-card a {
+  color: #fff; 
+}
+
+.card-img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.2);
+}
+
+.duration {
+  font-weight: bold;
+  margin: 0;
+}
+
+img.activity-category {
+    width: 35px;
+    height: 35px;
+    margin: 0;
+}
+
+.heart-container {
+  float: right;
+}
+
+@media screen and (min-width: 1000px) {
+  .card-img {
+    max-width: 350px;
+    height: 200px;
+  }
+}

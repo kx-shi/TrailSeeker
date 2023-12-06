@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import {TrailContainer} from './TrailContainer';
 import { NavBar } from './NavBar';
+import '../styles/HomePage.css';
 
 export const HomePage = ({ userLocation }) => {
+    const [backupTrailObjects, setBackupTrailObjects] = useState(null);
     const [trails, setTrails] = useState(null); // State for storing trail data from our first API request for a specific location
     const [trailObjects, setTrailObjects] = useState([]); // State for storing detailed trail objects, we will pass these to container to use them inside there
     const [isLoading, setIsLoading] = useState(true); // State for loading status (we can use it later for better user experience)
     const [error, setError] = useState(null); 
+   
 
     // Effect to fetch trail data when user location changes (we might change this to another style)
     useEffect(() => {
@@ -34,7 +37,7 @@ export const HomePage = ({ userLocation }) => {
                     if (data.result && data.result.length > 0) {
                         setTrails(data.result);
                         // Fetching the trail objects here with using ID's
-                        fetchTrailObjects(data.result);
+                        fetchTrailObjects(data.result);           
                     } else {
                         setTrails(null);
                         setError('No trails found for the specified location. Try increasing the search radius.');
@@ -67,9 +70,9 @@ export const HomePage = ({ userLocation }) => {
                 trailObjectArray.push(trailObject);
             }
             setTrailObjects(trailObjectArray);
-
+            setBackupTrailObjects([...trailObjectArray]);
             setTimeout(() => {
-                console.log('Tour Array', trailObjectArray);
+                // console.log('Tour Array', trailObjectArray);
             }, 700); // to get one log for not to confuse
         } catch (error) {
             console.error('Error fetching trail objects:', error);
@@ -109,8 +112,13 @@ export const HomePage = ({ userLocation }) => {
     // Rendering zone might require some update
 
     return (
-        <div>
-            <NavBar/>
+        <div className='homepage-container'>
+            <NavBar  
+                trailObjects={backupTrailObjects} 
+                setTrailObjects={setTrailObjects} 
+                backupTrailObjects={backupTrailObjects}
+                setBackupTrailObjects={setBackupTrailObjects}
+                />
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
             {!isLoading && trails === null && !error && (
@@ -118,9 +126,8 @@ export const HomePage = ({ userLocation }) => {
             )}
             {!isLoading && trails !== null && (
                 <div>
-                    <p>Trails:</p>
+                    <h2>Trails Near Stockholm</h2>
                     <TrailContainer trailObjects={trailObjects} />
-                    <p>Trail Objects:</p>
                 </div>
             )}
         </div>
