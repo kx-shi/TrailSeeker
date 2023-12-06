@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let likedList = [{ id: "8982351", isLiked: true }];
+let likedList = [{ id: "803725228", isLiked: true }];
 
 const initialState = {
   likedList,

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import {TrailContainer} from './TrailContainer';
+import { LikedTrailsContainer } from './LikedTrailsContainer';
 import { NavBar } from './NavBar';
 import { Filter } from './Filter';
 import '../styles/HomePage.css';
 
-export const HomePage = ({ userLocation }) => {
+export const HomePage = ({ userLocation, savedTrails }) => {
     const [backupTrailObjects, setBackupTrailObjects] = useState(null);
     const [trails, setTrails] = useState(null); // State for storing trail data from our first API request for a specific location
     const [trailObjects, setTrailObjects] = useState([]); // State for storing detailed trail objects, we will pass these to container to use them inside there
     const [isLoading, setIsLoading] = useState(true); // State for loading status (we can use it later for better user experience)
     const [error, setError] = useState(null); 
-   
 
     // Effect to fetch trail data when user location changes (we might change this to another style)
     useEffect(() => {
@@ -126,10 +126,16 @@ export const HomePage = ({ userLocation }) => {
             {!isLoading && trails === null && !error && (
                 <p>No trails available. Try increasing the search radius.</p>
             )}
-            {!isLoading && trails !== null && (
+            {!isLoading && trails !== null && !savedTrails && ( // Render all trail objects
                 <div>
                     <h2>Trails Near Stockholm</h2>
                     <TrailContainer trailObjects={trailObjects} />
+                </div>
+            )}
+            {!isLoading && trails !== null && savedTrails && ( // Render only liked trail objects
+                <div>
+                    <h2>Liked Trails</h2>
+                    <LikedTrailsContainer trailObjects={trailObjects} />
                 </div>
             )}
         </div>
