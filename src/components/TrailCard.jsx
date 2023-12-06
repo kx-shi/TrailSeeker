@@ -24,6 +24,7 @@ export const TrailCard = ({ trailObject }) => {
         alt={trailObject.category.name}
         title={trailObject.category.name}
       ></img>
+      <Heart trailID={trailObject.id}/>
     </div>
   );
 };

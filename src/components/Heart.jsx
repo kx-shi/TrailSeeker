@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Heart.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { like } from "../reducers/heart";
 
-export const Heart = (trailID) => {
+export const Heart = ( {trailID} ) => {
   const [liked, setLiked] = useState(false); /**get state from store */
-
   const likes = useSelector((state) => state.like.likedList);
+  const dispatch = useDispatch();
 
   const setHeartSymbol = () => {
+    dispatch(like.actions.toggleHeart( { id: trailID } ));
     // if (liked === false) {
     //   setLiked(true);
     // } else if (liked === true) {
     //   setLiked(false);
     // }
   };
+
   useEffect(() => {
-    console.log("likes", likes);
-    console.log("trailID", typeof trailID);
-    const likeObject = likes.filter((el) => el.id === trailID);
-    // console.log("likeObject", likeObject);
+    const likeObject = likes.find((el) => el.id === trailID);
     if (likeObject != undefined) {
-      console.log("LikeObject", likeObject);
       setLiked(likeObject.isLiked);
-      console.log("found");
+    }else {
+      setLiked(false);
     }
   });
 

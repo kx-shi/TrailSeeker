@@ -13,7 +13,9 @@ export const like = createSlice({
     toggleHeart: (state, action) => {
       const { id } = action.payload;
 
-      const liked = likedList.find((el) => el.id === id);
+      let liked = state.likedList.find((el) => el.id === id);
+      console.log(liked)
+      //liked.isLiked = !liked.isLiked;
       if (liked === undefined) {
         state.likedList.push({
           id,
