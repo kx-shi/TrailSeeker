@@ -6,12 +6,12 @@ import { NavBar } from "./NavBar";
 
 export const TrailPage = () => {
   const params = useParams(); // will return the trail ID
-  console.log(`TrailPage: params -> ${params.id}`)
+  console.log(`TrailPage: params -> ${params.id}`);
   return (
     <div>
       <div>TrailPage</div>
-      <NavBar/>
-      <Heart />
+      <NavBar />
+      <Heart trailID={params.id} />
       <CommentContainer trailID={params.id} />
     </div>
   );
