@@ -32,7 +32,6 @@ const TrailDetails = ({ trailId }) => {
         const data = await response.json();
         if (data.tour && data.tour.length > 0) {
           setTrailData(data.tour[0]);
-          console.log("OZAN", data.tour[0]);
         } else {
           console.error("Invalid trail data:", data);
           setTrailData(null);
@@ -63,11 +62,7 @@ const TrailDetails = ({ trailId }) => {
         length={trailData.length}
       />
       <TrailImages images={trailData.images} />
-      <TrailElevationProfile elevationData={trailData.elevationProfile} />
-      <img
-        src={`https://www.outdooractive.com/api/staticmap?i=${trailId}&size=medium&project=outdooractive`}
-        alt="Trail Map"
-      />
+      <TrailElevationProfile elevationData={trailData.elevationProfile} trailId={trailId} />
       <TrailDescription description={trailData.longText} />
       <TrailDescriptionInfo
         gettingThere={trailData.gettingThere}

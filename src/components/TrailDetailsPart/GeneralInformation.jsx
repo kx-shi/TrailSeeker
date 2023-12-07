@@ -70,7 +70,7 @@ const GeneralInformation = ({
       </div>
       {season && (
         <div className="general-information-section season-info">
-          <img src="../../../public/CalendarIcon.png" alt="Season Icon" className="info-icon" />
+          <img src="/CalendarIcon.png" alt="Season Icon" className="info-icon" />
           <p>{`: ${Object.entries(season)
             .filter(([_month, available]) => available)
             .map(([month]) => month)
