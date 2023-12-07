@@ -11,6 +11,7 @@ export const CommentContainer = () => {
 
     return(
         <div className="comment-container">
+            <h2>Comments</h2>
             {comments.map((comment, index) => (
               <Comment key={index} comment={comment} />
             ))}

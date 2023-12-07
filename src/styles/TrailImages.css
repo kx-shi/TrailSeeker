@@ -10,14 +10,18 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
-  border: 2px solid #12b43d;
-  border-radius: 5px;
 }
 
 .trail-images-unique .arrow {
   cursor: pointer;
   font-size: 24px;
   margin: 0 10px;
+  color: #DADBA3;
+  font-weight: bold;
+}
+
+.trail-images-unique .arrow:hover {
+  transform: scale(1.3);
 }
 
 .trail-images-unique .photo-box {

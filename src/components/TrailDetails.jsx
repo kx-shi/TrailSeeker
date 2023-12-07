@@ -51,17 +51,19 @@ const TrailDetails = ({ trailId }) => {
 
   return (
     <div className="trail-details">
+      <div className="trail-details-flex">
+        <TrailImages images={trailData.images} />
+        <GeneralInformation
+          category={trailData.category}
+          difficulty={trailData.difficulties}
+          elevation={trailData.elevation}
+          time={trailData.time}
+          rating={trailData.rating}
+          season={trailData.season}
+          length={trailData.length}
+        />
+      </div>
       <TrailOverview data={trailData} />
-      <GeneralInformation
-        category={trailData.category}
-        difficulty={trailData.difficulties}
-        elevation={trailData.elevation}
-        time={trailData.time}
-        rating={trailData.rating}
-        season={trailData.season}
-        length={trailData.length}
-      />
-      <TrailImages images={trailData.images} />
       <TrailElevationProfile elevationData={trailData.elevationProfile} trailId={trailId} />
       <TrailDescription description={trailData.longText} />
       <TrailDescriptionInfo

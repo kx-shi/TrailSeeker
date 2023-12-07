@@ -3,9 +3,13 @@
   font-family: "Arial", sans-serif;
   max-width: 800px;
   margin: 0 auto;
-  padding: 2vw;
+  padding-top: 3em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: rgb(255, 255, 255);
+}
+
+.trail-details-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 /* Styles for the trail overview section */
