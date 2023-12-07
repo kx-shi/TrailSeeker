@@ -1,20 +1,19 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import { Heart } from "./Heart";
 import { CommentContainer } from "./CommentContainer";
 import { NavBar } from "./NavBar";
+import { useParams } from "react-router-dom";
+import TrailDetails from "./TrailDetails";
 
 export const TrailPage = () => {
-  const params = useParams(); // will return the trail ID
-  console.log(`TrailPage: params -> ${params.id}`);
+  const { trailId } = useParams();
   return (
     <div>
       <div>TrailPage</div>
-      <NavBar />
-      <Heart trailID={params.id} />
-      <CommentContainer trailID={params.id} />
+      <NavBar/>
+      <TrailDetails trailId={trailId} />
+      <Heart />
+      <CommentContainer />
     </div>
   );
 };
-// save comment to global state
-// save like to global state

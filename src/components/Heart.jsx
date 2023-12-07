@@ -1,31 +1,21 @@
-import React, { useEffect, useState } from "react";
-import "../styles/Heart.css";
-import { useSelector, useDispatch } from "react-redux";
-import { like } from "../reducers/heart";
+import React, { useState } from "react";
 
-export const Heart = ({ trailID }) => {
-  const [liked, setLiked] = useState(false);
-  const likes = useSelector((state) => state.like.likedList);
-  const dispatch = useDispatch();
+export const Heart = () => {
+  const [liked, setLiked] = useState(false); /**get state from store */
 
   const setHeartSymbol = () => {
-    dispatch(like.actions.toggleHeart({ id: trailID }));
-  };
-
-  useEffect(() => {
-    const likeObject = likes.find((el) => el.id === trailID);
-    if (likeObject != undefined) {
-      setLiked(likeObject.isLiked);
-    } else {
+    if (liked === false) {
+      setLiked(true);
+    } else if (liked === true) {
       setLiked(false);
     }
-  });
+  };
 
   return (
     <div>
       <button className="heart" onClick={() => setHeartSymbol()}>
-        <div>{liked === true && "♥"}</div>
-        <div>{liked === false && "♡"}</div>
+        <div>{liked === true && "❤️"}</div>
+        <div>{liked === false && "🤍"}</div>
       </button>
     </div>
   );

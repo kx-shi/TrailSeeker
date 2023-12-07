@@ -18,4 +18,3 @@ export const TrailContainer = ({ trailObjects }) => {
     </div>
   );
 }
-
