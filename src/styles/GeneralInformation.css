@@ -1,6 +1,6 @@
 .general-information {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   grid-gap: 2px;
   padding: 2px;
   border: 1px solid #ccc;
@@ -48,4 +48,10 @@
 
 .rating-info p {
   margin: 0;
+}
+
+@media (max-width: 600px) {
+  .general-information {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
 }
