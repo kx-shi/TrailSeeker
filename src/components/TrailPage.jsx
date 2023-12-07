@@ -10,9 +10,9 @@ export const TrailPage = () => {
   return (
     <div>
       <div>TrailPage</div>
-      <NavBar/>
+      <NavBar />
       <TrailDetails trailId={trailId} />
-      <Heart />
+      <Heart trailID={trailId} />
       <CommentContainer />
     </div>
   );
