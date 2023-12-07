@@ -1,15 +1,7 @@
-nav {
+.navbar {
     display: flex;
-    background-color: #DADBA3;
-    margin: 0 10%;
-    padding: 0.5em;
     justify-content: center;
-    gap: 20px;
-}
-
-nav p {
-    margin: 10px;
-    color: #373D20;
+    gap: 5px;
 }
 
 .filter-container {
