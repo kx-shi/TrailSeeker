@@ -14,7 +14,8 @@ export const CommentContainer = ( {trailID} ) => {
 
     return(
         <div className="comment-container">
-            {filteredComments.map((comment, index) => (
+            <h2>Comments</h2>
+            {comments.map((comment, index) => (
               <Comment key={index} comment={comment} />
             ))}
             <CommentForm trailID={trailID} />
