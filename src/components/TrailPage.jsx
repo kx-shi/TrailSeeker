@@ -9,9 +9,9 @@ export const TrailPage = () => {
   const { trailId } = useParams();
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <TrailDetails trailId={trailId} />
-      <Heart />
+      <Heart trailID={trailId} />
       <CommentContainer />
     </div>
   );
