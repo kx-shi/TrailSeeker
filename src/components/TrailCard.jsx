@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Heart } from './Heart';
 import '../styles/TrailCard.css';
 
 export const TrailCard = ({ trailObject }) => {
