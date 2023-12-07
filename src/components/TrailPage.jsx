@@ -13,7 +13,7 @@ export const TrailPage = () => {
       <NavBar />
       <TrailDetails trailId={trailId} />
       <Heart trailID={trailId} />
-      <CommentContainer />
+      <CommentContainer trailID={trailId} />
     </div>
   );
 };
