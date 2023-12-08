@@ -59,11 +59,11 @@ export const Filter = ({
      
       >
         <option value="">All Difficulties</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+        <option value="1">Super easy</option>
+        <option value="2">Easy</option>
+        <option value="3">Medium</option>
+        <option value="4">Hard</option>
+        <option value="5">Super hard</option>
       </select>
       <select className="filter-selects"
         value={ratingFilter || ""}
@@ -96,8 +96,6 @@ export const Filter = ({
         <option value="8982343">Hiking Tour Trail</option>
         <option value="8982344">Long Distance Hiking Trail</option>
       </select>
-     
-      {/* <button onClick={handleApplyFilter}>Apply Filters</button> */}
     </div>
   );
 };
