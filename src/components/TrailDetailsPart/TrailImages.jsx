@@ -19,9 +19,6 @@ const TrailImages = ({ images }) => {
   return (
     <div className="trail-images-unique">
       <div className="image-container">
-        <div className="arrow" onClick={handlePrev}>
-          {"<"}
-        </div>
         <div className="photo-box">
           <img
             src={`https://img.oastatic.com/img2/${currentImage.id}/default/variant.jpg`}
@@ -29,12 +26,18 @@ const TrailImages = ({ images }) => {
             className="image"
           />
         </div>
-        <div className="arrow" onClick={handleNext}>
+        <span className="vignette"></span>
+        <div className="arrow left" onClick={handlePrev}>
+          {"<"}
+        </div>
+        <div className="arrow right" onClick={handleNext}>
           {">"}
         </div>
       </div>
+      <span className="image-title">
+        <p>{currentImage.title}</p>
+      </span>
       <div className="information-box">
-        <p>Title: {currentImage.title}</p>
         <p>Author: {currentImage.author}</p>
         <p>Source: {currentImage.source}</p>
       </div>

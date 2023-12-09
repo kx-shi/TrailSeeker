@@ -8,6 +8,6 @@ The trails displayed include information such as name of the trail, location, le
 **Colour palette** \
 #766153 - dark brown \
 #DADBA3 - light green \
-#BCBD8B \
+#BCBD8B - medium green \
 #EFF1ED - off-white \
 #373D20 - dark green

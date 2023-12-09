@@ -63,8 +63,7 @@ const GeneralInformation = ({
         <img src="/RatingIcon.png" alt="Rating Icon" className="info-icon" />
         {rating && (
           <div>
-            <p>{`Cond: ${rating.condition} Dif: ${rating.difficulty} Teq: ${rating.technique}`}</p>
-            <p>{`Exp: ${rating.qualityOfExperience} Lndscp: ${rating.landscape}`}</p>
+            <p>{`Cond: ${rating.condition} Dif: ${rating.difficulty} Teq: ${rating.technique} Exp: ${rating.qualityOfExperience} Lndscp: ${rating.landscape}`}</p>
           </div>
         )}
       </div>

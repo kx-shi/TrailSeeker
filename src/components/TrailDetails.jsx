@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GeneralInformation from "./TrailDetailsPart/GeneralInformation";
+import { Heart } from "./Heart";
 import TrailOverview from "./TrailDetailsPart/TrailOverview";
 import TrailElevationProfile from "./TrailDetailsPart/TrailElevationProfile";
 import TrailDescription from "./TrailDetailsPart/TrailDescription";
@@ -51,8 +52,20 @@ const TrailDetails = ({ trailId }) => {
 
   return (
     <div className="trail-details">
-      <div className="trail-details-flex">
-        <TrailImages images={trailData.images} />
+      <TrailImages images={trailData.images} />
+      <div className="trail-details-grid">
+        <div className="text-left">
+          <div className="trail-details-flex">
+            <h1>{trailData.title}</h1>
+            <Heart trailID={trailId}/>
+          </div>
+          <TrailDescription description={trailData.longText} />
+          <TrailAdditionalInfo additionalInfo={trailData.additionalInformation} />
+          <TrailDescriptionInfo
+            gettingThere={trailData.gettingThere}
+            tips={trailData.tips}
+          />
+        </div>
         <GeneralInformation
           category={trailData.category}
           difficulty={trailData.difficulties}
@@ -63,14 +76,7 @@ const TrailDetails = ({ trailId }) => {
           length={trailData.length}
         />
       </div>
-      <TrailOverview data={trailData} />
       <TrailElevationProfile elevationData={trailData.elevationProfile} trailId={trailId} />
-      <TrailDescription description={trailData.longText} />
-      <TrailDescriptionInfo
-        gettingThere={trailData.gettingThere}
-        tips={trailData.tips}
-      />
-      <TrailAdditionalInfo additionalInfo={trailData.additionalInformation} />
     </div>
   );
 };

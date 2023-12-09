@@ -4,6 +4,7 @@
   align-items: center;
 }
 
+/*
 .trail-images-unique .image-container {
   display: flex;
   align-items: center;
@@ -19,6 +20,40 @@
   color: #DADBA3;
   font-weight: bold;
 }
+*/
+
+.trail-images-unique .image-container {
+  width: 100%;
+  position: relative;
+}
+
+.trail-images-unique .arrow {
+  position: absolute;
+  top: 280px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #EFF1ED;
+  font-weight: bold;
+  padding: 0 0.5em;
+  text-shadow: 1px 1px 5px black;
+}
+
+.arrow.left {
+  left: 0;
+}
+
+.arrow.right {
+  right: 0;
+}
+
+.vignette {
+  position: absolute;
+  box-shadow: -50px 0px 50px -30px #000000 inset, 50px 0px 50px -30px #000000 inset;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 .trail-images-unique .arrow:hover {
   transform: scale(1.3);
@@ -27,12 +62,8 @@
 .trail-images-unique .photo-box {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  height: 400px;
+  height: 600px;
   overflow: hidden;
-  border-radius: 5px;
-  margin-top: 3px;
-  margin-bottom: 3px;
 }
 
 .trail-images-unique .image {
@@ -41,22 +72,24 @@
   object-fit: cover;
 }
 
+.trail-images-unique .image-title p {
+  font-weight: bold;
+  font-size: small;
+  color: #DADBA3;
+}
+
 .trail-images-unique .information-box {
-  margin-top: 3px;
-  border: 2px solid #12b43d;
   width: 100%;
-  text-align: center;
   font-size: x-small;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border-radius: 5px;
 }
 
 /* Updated styles for information box */
 .trail-images-unique .information-box p {
-  margin: 8px 0;
   font-weight: bold;
   font-size: x-small;
+  color: #BCBD8B;
 }
