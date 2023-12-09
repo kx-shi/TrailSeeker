@@ -8,6 +8,7 @@ import { trails } from './reducers/trails'
 
 // Styles imports
 import './styles/style.css'
+import { Title } from "./components/Title";
 
 // TODO: When several reducers exists, combine them into 'one'
 const reducer = combineReducers({
@@ -24,8 +25,10 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-        <h1>TrailSeeker</h1>
-        <BrowserRouter>{routes()}</BrowserRouter>
+        <BrowserRouter>
+          <Title />
+          {routes()}
+        </BrowserRouter>
       </div>
     </Provider>
     

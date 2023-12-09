@@ -4,7 +4,7 @@
 import { Link } from 'react-router-dom';
 import '../styles/Comment.css'
 
-export const Title = ( {comment} ) => {
+export const Title = () => {
     return(
         <Link to="/">
             <h1>TrailSeeker</h1>
