@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { routes } from "./routes";
 import { like } from "./reducers/heart";
 import { comments } from './reducers/comments'
+import { trails } from './reducers/trails'
 
 // Styles imports
 import './styles/style.css'
@@ -12,6 +13,7 @@ import './styles/style.css'
 const reducer = combineReducers({
   comments: comments.reducer,
   like: like.reducer,
+  trails: trails.reducer,
 });
 
 const store = configureStore({ reducer })

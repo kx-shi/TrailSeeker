@@ -28,7 +28,6 @@ export const CommentForm = ( {trailID} ) => {
 
     const handleCommentSubmit = (e) => {
       e.preventDefault();
-      console.log("ayy")
       dispatch(comments.actions.createComment( { id: uuidv4(), trailID: trailID, author: name, content: content } ));
     }
 
