@@ -11,7 +11,6 @@ const children= true;
     <Routes>
       <Route path="/" element={<HomePage userLocation={userLocation} savedTrails={false}/>} />
       <Route path="/trails/:trailId" element={<TrailPage />} />
-      <Route path="/trails-page" element={<TrailPage />} />
       <Route path="/liked-trails" element={<LikedTrailsContainer />} />
     </Routes>
   );
