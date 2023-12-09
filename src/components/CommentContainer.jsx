@@ -10,7 +10,7 @@ export const CommentContainer = ( {trailID} ) => {
     const comments = useSelector((state) => state.comments.commentList);
     const filteredComments = comments.filter((comment) => comment.trailID === trailID); // filter comments for specific trail
 
-    console.log(`CommentContainer: ${typeof(trailID)}`)
+    //console.log(`CommentContainer: ${typeof(trailID)}`)
 
     return(
         <div className="comment-container">

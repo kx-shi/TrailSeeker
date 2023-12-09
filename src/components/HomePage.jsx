@@ -10,7 +10,7 @@ export const HomePage = ({ userLocation, savedTrails }) => {
     const [trails, setTrails] = useState(null); // State for storing trail data from our first API request for a specific location
     const [trailObjects, setTrailObjects] = useState([]); // State for storing detailed trail objects, we will pass these to container to use them inside there
     const [isLoading, setIsLoading] = useState(true); // State for loading status (we can use it later for better user experience)
-    const [error, setError] = useState(null); 
+    const [error, setError] = useState(null);
 
     // Effect to fetch trail data when user location changes (we might change this to another style)
     useEffect(() => {
@@ -135,7 +135,7 @@ export const HomePage = ({ userLocation, savedTrails }) => {
             {!isLoading && trails !== null && savedTrails && ( // Render only liked trail objects
                 <div>
                     <h2>Liked Trails</h2>
-                    <LikedTrailsContainer trailObjects={trailObjects} />
+                    <LikedTrailsContainer />
                 </div>
             )}
         </div>
