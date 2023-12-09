@@ -1,11 +1,22 @@
 /* General styles for the trail details */
 .trail-details {
   font-family: "Arial", sans-serif;
-  max-width: 1280px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2vw;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: rgb(255, 255, 255);
+  padding-top: 3em;
+  margin-bottom: 150px;
+}
+
+.trail-details-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.trail-details-flex {
+  display: flex;
+  align-items: center;
+  gap: 2em;
 }
 
 /* Styles for the trail overview section */
@@ -13,9 +24,9 @@
   margin-bottom: 20px;
 }
 
-.trail-overview h1 {
+.trail-details h1 {
   font-size: 24px;
-  color: #333;
+  color: #EFF1ED;
 }
 
 /* Styles for the elevation profile container */
@@ -60,7 +71,7 @@
   margin-top: 20px;
 }
 
-/* General text styles for the trail details */
+/* General text styles for the trail details
 .trail-details h1,
 .trail-details h2,
 .trail-details h3,
@@ -69,7 +80,14 @@
 .trail-details h6,
 .trail-details p,
 .trail-details a {
-  color: black;
+  color: #EFF1ED;
+}
+ */
+
+/*Styling for trail long description*/
+.text-left {
+  text-align: left;
+  padding-right: 3em;
 }
 
 /* Media query for smaller screens */
@@ -77,5 +95,11 @@
   /* Adjust the styles for images within the elevation profile container on smaller screens */
   .trail-elevation-profile > img {
     flex-basis: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .trail-details-grid { /* Remove grid display */
+      display: block;
   }
 }
