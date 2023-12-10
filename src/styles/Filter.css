@@ -1,29 +1,30 @@
 .filter-container {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.filter-selects{
-    border-radius: 8px;
+.filter-selects {
+  border-radius: 8px;
 }
 
 .filter-container > select {
-    margin: 5px 5px;
-    border: 1px #3b2f27 solid;
-    color: #3b2f27;
-    padding: 0.2em 1em;
-    width: 195px;
+  background-color: #fff;
+  margin: 5px 5px;
+  border: 1px #3b2f27 solid;
+  color: #3b2f27;
+  padding: 0.2em 1em;
+  width: 195px;
 }
 
 .filter-container > h2 {
-    font-size: 20px;
-    margin: 0 auto;
-    text-align: left;
+  font-size: 20px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 @media screen and (max-width: 510px) {
-    .filter-container > select{
-        display: block;
-        margin: 5px auto;
-    }
+  .filter-container > select {
+    display: block;
+    margin: 5px auto;
+  }
 }
