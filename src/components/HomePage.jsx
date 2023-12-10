@@ -116,12 +116,12 @@ export const HomePage = ({ userLocation, savedTrails }) => {
     return (
         <div className='homepage-container'>
             <NavBar/>
-                <Filter
+            <Filter
                 trailObjects={backupTrailObjects} 
                 setTrailObjects={setTrailObjects} 
                 backupTrailObjects={backupTrailObjects}
                 setBackupTrailObjects={setBackupTrailObjects}
-                />
+            />
             {(isLoading && <Loading />)}
             {error && <p>{error}</p>}
             {!isLoading && trails === null && !error && (

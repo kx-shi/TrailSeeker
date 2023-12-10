@@ -1,26 +1,9 @@
 .trail-images-unique {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 }
-
-/*
-.trail-images-unique .image-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
-}
-
-.trail-images-unique .arrow {
-  cursor: pointer;
-  font-size: 24px;
-  margin: 0 10px;
-  color: #DADBA3;
-  font-weight: bold;
-}
-*/
 
 .trail-images-unique .image-container {
   width: 100%;
@@ -62,7 +45,8 @@
 .trail-images-unique .photo-box {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: auto;
+  max-height: 600px;
   overflow: hidden;
 }
 
@@ -72,24 +56,61 @@
   object-fit: cover;
 }
 
+.image-description {
+  width: 100%;
+  background-color: #BCBD8B;
+  padding: 0.em 0;
+  margin-bottom: 15px;
+}
+
 .trail-images-unique .image-title p {
   font-weight: bold;
   font-size: small;
-  color: #DADBA3;
+  color: #766153;
+  margin: 0.5em;
 }
 
 .trail-images-unique .information-box {
-  width: 100%;
-  font-size: x-small;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  margin: 0;
 }
 
-/* Updated styles for information box */
+/* Styling for information box p-elements */
 .trail-images-unique .information-box p {
   font-weight: bold;
   font-size: x-small;
-  color: #BCBD8B;
+  color: #766153;
+}
+
+@media (max-width: 900px) {
+  .trail-images-unique .photo-box {
+    max-height: 400px;
+  }
+
+  .trail-images-unique .arrow {
+    top: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .trail-images-unique .photo-box {
+    max-height: 300px;
+  }
+
+  .trail-images-unique .arrow {
+    top: 140px;
+  }
+}
+
+@media (max-width: 450px) {
+  .trail-images-unique .photo-box {
+    max-height: 200px;
+  }
+
+  .trail-images-unique .arrow {
+    top: 90px;
+  }
 }

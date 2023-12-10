@@ -34,9 +34,9 @@ export const CommentForm = ( {trailID} ) => {
     return(
         <form className="comment-form" onSubmit={handleCommentSubmit}>
             <label htmlFor="name"><p>Name</p></label>
-            <input type="text" id="name" onChange={updateTextInput} placeholder="your name" required />   
+            <input type="text" className="comment-input" id="name" onChange={updateTextInput} placeholder="your name" required />   
             <label htmlFor="content"><p>Comment</p></label>
-            <input type="text" className="comment-input" id="content" onChange={updateTextInput} required />   
+            <textarea className="comment-input" id="content" onChange={updateTextInput} required cols={30} rows={10}></textarea>
             <button type="submit" className="comment-submit">Post</button>
         </form>
     )

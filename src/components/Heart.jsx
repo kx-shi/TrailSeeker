@@ -24,8 +24,8 @@ export const Heart = ({ trailID }) => {
   return (
     <div>
       <button className="heart" onClick={() => setHeartSymbol()}>
-        <div>{liked === true && "♥"}</div>
-        <div>{liked === false && "♡"}</div>
+        <span title="Remove trail from likes">{liked === true && "♥"}</span>
+        <span title="Add trail to likes">{liked === false && "♡"}</span>
       </button>
     </div>
   );
