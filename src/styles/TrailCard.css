@@ -1,7 +1,7 @@
 
 .trail-card {
   text-align: left;
-  margin: 20px;
+  margin: 50px;
 }
 
 .trail-card-flex {
@@ -22,9 +22,8 @@
 
 .card-img {
     width: 100%;
-    max-width: 300px;
-    height: 200px;
-    overflow: hidden;
+    height: 100%;
+    object-fit: cover;
     box-shadow: 5px 5px 10px rgba(0,0,0,.2);
 }
 
@@ -41,7 +40,6 @@ img.activity-category {
 
 @media screen and (min-width: 1000px) {
   .card-img {
-    max-width: 350px;
-    height: 200px;
+    max-height: 270px;
   }
 }

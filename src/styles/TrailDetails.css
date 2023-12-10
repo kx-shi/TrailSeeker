@@ -86,15 +86,23 @@
 
 /*Styling for trail long description*/
 .text-left {
-  text-align: left;
+  text-align: justify;
   padding-right: 3em;
+}
+
+.trail-additional-info > div { 
+  color: #EFF1ED;
 }
 
 /* Media query for smaller screens */
 @media (max-width: 600px) {
+  .trail-elevation-profile {
+    display: block;
+  }
+
   /* Adjust the styles for images within the elevation profile container on smaller screens */
   .trail-elevation-profile > img {
-    flex-basis: 100%;
+    width: 100%;
   }
 }
 

@@ -1,18 +1,29 @@
+.filter-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
 .filter-selects{
-   margin: 5px;
-    background-position: right 8px top 6px;
-    background-size: 18px;
     border-radius: 8px;
-    padding: 5px 33px 5px 15px;
-    
 }
 
 .filter-container > select {
-    margin: 40px 5px;
+    margin: 5px 5px;
+    border: 1px #3b2f27 solid;
+    color: #3b2f27;
+    padding: 0.2em 1em;
+    width: 195px;
 }
 
-@media screen and (min-width: 700px) {
-    .filter-container { /* div for section that displays all trail cards */
-        display: inline;
+.filter-container > h2 {
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+@media screen and (max-width: 510px) {
+    .filter-container > select{
+        display: block;
+        margin: 5px auto;
     }
 }

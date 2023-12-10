@@ -5,10 +5,12 @@ import { routes } from "./routes";
 import { like } from "./reducers/heart";
 import { comments } from './reducers/comments'
 import { trails } from './reducers/trails'
+import { ScrollToTop } from "./components/ScrollToTop";
 
 // Styles imports
 import './styles/style.css'
 import { Title } from "./components/Title";
+
 
 // TODO: When several reducers exists, combine them into 'one'
 const reducer = combineReducers({
@@ -26,6 +28,7 @@ function App() {
     <Provider store={store}>
       <div className="app">
         <BrowserRouter>
+          <ScrollToTop />
           <Title />
           {routes()}
         </BrowserRouter>
