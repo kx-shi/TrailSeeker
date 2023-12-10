@@ -31,3 +31,10 @@ We are committed to increasing awareness of the importance of our environment. T
 - **Medium Green (#BCBD8B):** Complementary color for various UI components.
 - **Off-White (#EFF1ED):** Background color for a clean and modern look.
 - **Dark Green (#373D20):** Used for contrast and specific design elements.
+
+## Credits
+Icons are taken from Outdooractive and flaticon.com. Designers whose icons we have used include:
+
+- [Afqotunnajah](https://www.flaticon.com/authors/Afqotunnajah)
+- [SeyfDesigner](https://www.flaticon.com/authors/seyfdesigner)
+- [th studio](https://www.flaticon.com/authors/th-studio)
