@@ -9,17 +9,15 @@ import { useSelector, useDispatch } from "react-redux";
 // Action imports from reducers
 import { fetchTrails } from '../reducers/trails';
 // Component imports
+import { IntermediatePage } from './IntermediatePage';
 import { TrailContainer } from './TrailContainer';
 import { NavBar } from './NavBar';
 // Style imports
 import '../styles/TrailContainer.css'
-import { Loading } from './Loading';
-import { Error } from './Error';
 
 export const LikedTrailsContainer = () => {
     const dispatch = useDispatch();
     const [likedTrailObjects, setlikedTrailObjects] = useState([]);
-    const [initialized, setInitialized] = useState(false)
     const likedTrails = useSelector((state) => state.like.likedList);
     const trails = useSelector((state) => state.trails);
     const stableDispatch = useCallback(dispatch, []);
@@ -46,9 +44,9 @@ export const LikedTrailsContainer = () => {
     return (
       <div className="liked-trails">
           <NavBar />
-          {(trails.loading && <Loading />)}
-          {(!trails.loading && trails.error ? <Error /> : null)}
-          {(!trails.loading && trails.trailObjects.length ? <TrailContainer trailObjects={likedTrailObjects} /> : null)}
+          {(trails.loading && <IntermediatePage message="Loading..." />)}
+          {(!trails.loading && trails.error ? <IntermediatePage message="Error, something went wrong. Try refreshing the page" /> : null)}
+          {(!trails.loading && likedTrailObjects.length ? <TrailContainer trailObjects={likedTrailObjects} /> : <IntermediatePage message="No liked trails..." />)}
       </div>
     );
 }

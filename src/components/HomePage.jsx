@@ -3,7 +3,7 @@ import {TrailContainer} from './TrailContainer';
 import { LikedTrailsContainer } from './LikedTrailsContainer';
 import { NavBar } from './NavBar';
 import { Filter } from './Filter';
-import { Loading } from './Loading';
+import { IntermediatePage } from './IntermediatePage';
 import '../styles/HomePage.css';
 
 export const HomePage = ({ userLocation, savedTrails }) => {
@@ -122,7 +122,7 @@ export const HomePage = ({ userLocation, savedTrails }) => {
                 backupTrailObjects={backupTrailObjects}
                 setBackupTrailObjects={setBackupTrailObjects}
             />
-            {(isLoading && <Loading />)}
+            {(isLoading && <IntermediatePage message="Loading..." />)}
             {error && <p>{error}</p>}
             {!isLoading && trails === null && !error && (
                 <p>No trails available. Try increasing the search radius.</p>
