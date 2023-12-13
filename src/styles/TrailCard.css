@@ -1,7 +1,8 @@
-
 .trail-card {
   text-align: left;
-  margin: 50px;
+  margin: 20px;
+  border: 3px solid #3b5409;
+  padding: 5px;
 }
 
 .trail-card-flex {
@@ -10,21 +11,14 @@
   justify-content: space-between;
 }
 
-.trail-card h2{
+.trail-card h2 {
   margin: 0;
   font-size: 1.2em;
   text-align: left;
 }
 
 .trail-card a {
-  color: #fff; 
-}
-
-.card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    box-shadow: 5px 5px 10px rgba(0,0,0,.2);
+  color: #fff;
 }
 
 .duration {
@@ -33,13 +27,46 @@
 }
 
 img.activity-category {
-    width: 35px;
-    height: 35px;
-    margin: 0;
+  width: 35px;
+  height: 45px;
+  margin: 0;
 }
 
-@media screen and (min-width: 1000px) {
-  .card-img {
-    max-height: 270px;
+.title {
+  margin: 0;
+  font-size: 1.2em;
+  text-align: left;
+  height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-img-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  overflow: hidden;
+}
+
+.card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 999px) {
+  .trail-card h2,
+  .title {
+    font-size: 1em;
+  }
+
+  .trail-card {
+    margin: 3px;
   }
 }

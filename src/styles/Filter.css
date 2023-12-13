@@ -5,6 +5,8 @@
 
 .filter-selects {
   border-radius: 8px;
+  width: 200px;
+  font-size: 16px;
 }
 
 .filter-container > select {
@@ -12,19 +14,21 @@
   margin: 5px 5px;
   border: 1px #3b2f27 solid;
   color: #3b2f27;
-  padding: 0.2em 1em;
-  width: 195px;
+  padding: 0.5em 1em;
+  width: 200px;
+  font-size: 16px;
 }
 
 .filter-container > h2 {
-  font-size: 20px;
   margin: 0 auto;
   text-align: left;
 }
 
 @media screen and (max-width: 510px) {
   .filter-container > select {
-    display: block;
-    margin: 5px auto;
+    display: inline-flexbox;
+    margin: 5px;
+    width: 45%;
+    font-size: 12px;
   }
 }

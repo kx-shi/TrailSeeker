@@ -1,3 +1,8 @@
+.app-name {
+    text-align: center;
+    font-size: 55px;
+}
+
 .homepage-container {
     margin: 0;
     padding: 0;
@@ -6,3 +11,17 @@
 h2 {
     text-align: center;
 }
+
+.trail-search-title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 510px) {
+    .trail-search-title {
+      font-size: 25px;
+    }
+    .app-name{
+        font-size: 38px;
+    }
+  }

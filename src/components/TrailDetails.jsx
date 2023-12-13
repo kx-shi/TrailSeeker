@@ -63,7 +63,7 @@ const TrailDetails = ({ trailId }) => {
           <TrailAdditionalInfo additionalInfo={trailData.additionalInformation} />
           <TrailDescriptionInfo
             gettingThere={trailData.gettingThere}
-            tips={trailData.tips}
+            tips={trailData.tip}
           />
         </div>
         <GeneralInformation

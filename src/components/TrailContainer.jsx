@@ -4,7 +4,7 @@ import { TrailCard } from './TrailCard';
 
 
 export const TrailContainer = ({ trailObjects }) => {
-  //console.log(trailObjects);
+  console.log(trailObjects);
   return (
     <div className="trail-container">
       <div className="card-container">
