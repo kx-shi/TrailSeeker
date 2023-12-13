@@ -1,6 +1,8 @@
 .trail-card {
   text-align: left;
   margin: 20px;
+  border: 3px solid #3b5409;
+  padding: 5px;
 }
 
 .trail-card-flex {
@@ -11,7 +13,7 @@
 
 .trail-card h2 {
   margin: 0;
-  font-size: 1.2em; /* Default font size for larger screens */
+  font-size: 1.2em;
   text-align: left;
 }
 
@@ -26,13 +28,13 @@
 
 img.activity-category {
   width: 35px;
-  height: 35px;
+  height: 45px;
   margin: 0;
 }
 
 .title {
   margin: 0;
-  font-size: 1.2em; /* Default font size for larger screens */
+  font-size: 1.2em;
   text-align: left;
   height: 3em;
   overflow: hidden;
@@ -59,14 +61,12 @@ img.activity-category {
 }
 
 @media screen and (max-width: 999px) {
-  /* Adjust font size for smaller screens */
   .trail-card h2,
   .title {
-    font-size: 1em; /* Adjust the font size as needed */
+    font-size: 1em;
   }
-  
-  /* Additional styles for smaller screens if needed */
+
   .trail-card {
-    margin: 15px; /* Adjust the margin as needed */
+    margin: 3px;
   }
 }

@@ -129,7 +129,7 @@ export const HomePage = ({ userLocation, savedTrails }) => {
             )}
             {!isLoading && trails !== null && !savedTrails && ( // Render all trail objects
                 <div>
-                    <h2>Trails Near Stockholm</h2>
+                    <h2 className='trail-search-title'>Trails Near Stockholm</h2>
                     <TrailContainer trailObjects={trailObjects} />
                 </div>
             )}
