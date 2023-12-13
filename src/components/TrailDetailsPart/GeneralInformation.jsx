@@ -23,16 +23,21 @@ const GeneralInformation = ({
     <div className="general-information">
       {category && (
         <div className="general-information-section">
-          <img src="/vite.svg" alt="Category Icon" className="info-icon" />
+          <img
+            className="activity-category"
+            src={category.iconUrl}
+            alt={category.name}
+            title={category.name}
+          />
           <p>{category.name}</p>
         </div>
       )}
       <div className="general-information-section">
-        <img src="/DurationIcon.png" alt="Duration Icon" className="info-icon" />
+        <img src="/DurationIcon.png" alt="Duration Icon" className="info-icon" title="duration" />
         <p>{`${formatTime(time.min)}`}</p>
       </div>
       <div className="general-information-section">
-        <img src="/DistanceIcon.jpg" alt="Distance Icon" className="info-icon" />
+        <img src="/DistanceIcon.png" alt="Distance Icon" className="info-icon" title="distance" />
         <p>{`${(length / 1000).toFixed(1)} km`}</p>
       </div>
       {difficulties && (
@@ -44,34 +49,33 @@ const GeneralInformation = ({
         </div>
       )}
       <div className="general-information-section">
-        <img src="/LowestPointIcon.png" alt="Min Altitude Icon" className="info-icon" />
+        <img src="/LowestPointIcon.png" alt="Min Altitude Icon" className="info-icon" title="lowest point" />
         <p>{`${elevation.minAltitude} m`}</p>
       </div>
       <div className="general-information-section">
-        <img src="/HighestPointIcon.png" alt="Max Altitude Icon" className="info-icon" />
+        <img src="/HighestPointIcon.png" alt="Max Altitude Icon" className="info-icon" title="highest point" />
         <p>{`${elevation.maxAltitude} m`}</p>
       </div>
       <div className="general-information-section">
-        <img src="/AscentIcon.png" alt="Ascent Icon" className="info-icon" />
+        <img src="/AscentIcon.png" alt="Ascent Icon" className="info-icon" title="ascent" />
         <p>{`${elevation.ascent} m`}</p>
       </div>
       <div className="general-information-section">
-        <img src="/DescentIcon.png" alt="Descent Icon" className="info-icon" />
+        <img src="/DescentIcon.png" alt="Descent Icon" className="info-icon" title="descent" />
         <p>{`${elevation.descent} m`}</p>
       </div>
       <div className="general-information-section rating-info">
-        <img src="/RatingIcon.png" alt="Rating Icon" className="info-icon" />
+        <img src="/RatingIcon.png" alt="Rating Icon" className="info-icon" title="rating" />
         {rating && (
           <div>
-            <p>{`Cond: ${rating.condition} Dif: ${rating.difficulty} Teq: ${rating.technique}`}</p>
-            <p>{`Exp: ${rating.qualityOfExperience} Lndscp: ${rating.landscape}`}</p>
+            <p>{`${rating.qualityOfExperience}`}</p>
           </div>
         )}
       </div>
       {season && (
         <div className="general-information-section season-info">
-          <img src="/CalendarIcon.png" alt="Season Icon" className="info-icon" />
-          <p>{`: ${Object.entries(season)
+          <img src="/CalendarIcon.png" alt="Season Icon" className="info-icon" title="best seasons" />
+          <p>{`${Object.entries(season)
             .filter(([_month, available]) => available)
             .map(([month]) => month)
             .join(", ")}`}</p>

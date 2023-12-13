@@ -2,10 +2,7 @@
     display: flex;
     justify-content: center;
     gap: 5px;
-}
-
-.filter-container {
-    display: block;
+    margin-bottom: 20px;
 }
 
 .navbar-btn {

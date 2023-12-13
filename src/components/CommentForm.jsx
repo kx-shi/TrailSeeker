@@ -16,10 +16,10 @@ export const CommentForm = ( {trailID} ) => {
     const updateTextInput = (e) => {
         switch(e.target.id) {
             case "name":
-                setName(e.target.value)
+                setName(e.target.value);
                 break;
             case "content":
-                setContent(e.target.value)
+                setContent(e.target.value);
                 break;
             default:
                 break;
@@ -28,17 +28,18 @@ export const CommentForm = ( {trailID} ) => {
 
     const handleCommentSubmit = (e) => {
       e.preventDefault();
-      console.log("ayy")
       dispatch(comments.actions.createComment( { id: uuidv4(), trailID: trailID, author: name, content: content } ));
+      setName("");
+      setContent("");
     }
 
     return(
         <form className="comment-form" onSubmit={handleCommentSubmit}>
-            <label htmlFor="name"><p>Name:</p></label>
-            <input type="text" id="name" onChange={updateTextInput} placeholder="your name" required />   
-            <label htmlFor="content"><p>Leave a comment:</p></label>
-            <input type="text" className="comment-input" id="content" onChange={updateTextInput} required />   
-            <button type="submit" className="comment-submit">Comment!</button>
+            <label htmlFor="name"><p>Name</p></label>
+            <input type="text" className="comment-input" id="name" value={name} onChange={updateTextInput} placeholder="your name" required />   
+            <label htmlFor="content"><p>Comment</p></label>
+            <textarea className="comment-input" id="content" value={content} onChange={updateTextInput} required cols={30} rows={10}></textarea>
+            <button type="submit" className="comment-submit">Post</button>
         </form>
     )
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import './../styles/Filter.css';
+
 export const Filter = ({ 
   trailObjects,
   setTrailObjects,
@@ -15,6 +16,7 @@ export const Filter = ({
   }, [difficultyFilter, ratingFilter, categoryFilter]);
 
   let filteredTrails = {};
+
   const handleFilter = () => {
     if (!Array.isArray(trailObjects)) {
         return;
@@ -56,7 +58,6 @@ export const Filter = ({
           setCategoryFilter('');
           setDifficultyFilter(e.target.value === "" ? null : e.target.value.toString());
         }}
-     
       >
         <option value="">All Difficulties</option>
         <option value="1">Super easy</option>
@@ -91,7 +92,7 @@ export const Filter = ({
         }}
         multiple={false}
       >
-        <option value="">All Category</option>
+        <option value="">All Categories</option>
         <option value="8982351">Racing Bike</option>
         <option value="8982343">Hiking Tour Trail</option>
         <option value="8982344">Long Distance Hiking Trail</option>

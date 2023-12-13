@@ -1,14 +1,13 @@
 import React from "react";
 
 const TrailDescriptionInfo = ({ gettingThere, tips }) => {
+  console.log("tips", gettingThere)
   return (
     <div className="trail-description-info">
-      <h2>Trail Description</h2>
       <h3>Getting There</h3>
-      <p>{gettingThere}</p>
-
+      <p>{(gettingThere !== undefined) ? gettingThere : "No information available"}</p>
       <h3>Tips for the Tour</h3>
-      <p>{tips}</p>
+      <p>{(tips !== undefined) ? tips : "No tips available"}</p>
     </div>
   );
 };

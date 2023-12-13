@@ -4,14 +4,19 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { routes } from "./routes";
 import { like } from "./reducers/heart";
 import { comments } from './reducers/comments'
+import { trails } from './reducers/trails'
+import { ScrollToTop } from "./components/ScrollToTop";
 
 // Styles imports
 import './styles/style.css'
+import { Title } from "./components/Title";
+
 
 // TODO: When several reducers exists, combine them into 'one'
 const reducer = combineReducers({
   comments: comments.reducer,
   like: like.reducer,
+  trails: trails.reducer,
 });
 
 const store = configureStore({ reducer })
@@ -22,8 +27,11 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-        <h1>TrailSeeker</h1>
-        <BrowserRouter>{routes()}</BrowserRouter>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Title />
+          {routes()}
+        </BrowserRouter>
       </div>
     </Provider>
     

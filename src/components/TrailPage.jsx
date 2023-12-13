@@ -11,7 +11,6 @@ export const TrailPage = () => {
     <div>
       <NavBar />
       <TrailDetails trailId={trailId} />
-      <Heart trailID={trailId} />
       <CommentContainer trailID={trailId} />
     </div>
   );

@@ -3,7 +3,7 @@ import React from "react";
 const TrailDescription = ({ description }) => {
   return (
     <div className="trail-description">
-      <p dangerouslySetInnerHTML={{ __html: description }} />
+      {description ? <p dangerouslySetInnerHTML={{ __html: description }} /> : <p>No description available</p>}
     </div>
   );
 };
