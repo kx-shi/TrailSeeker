@@ -1,8 +1,8 @@
 /* General styles for the trail details */
 .trail-details {
   font-family: "Arial", sans-serif;
-  width: 100%;
-  max-width: 1200px;
+  width: 90%;
+  max-width: 1100px;
   margin: 0 auto;
   padding-top: 3em;
   margin-bottom: 150px;
@@ -84,10 +84,9 @@
 }
  */
 
-/*Styling for trail long description*/
 .text-left {
   text-align: justify;
-  padding-right: 3em;
+
 }
 
 .trail-additional-info > div { 
@@ -102,7 +101,7 @@
 
   /* Adjust the styles for images within the elevation profile container on smaller screens */
   .trail-elevation-profile > img {
-    width: 100%;
+    width: 90%;
   }
 }
 

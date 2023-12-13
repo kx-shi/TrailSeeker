@@ -64,10 +64,11 @@ input[type=text] {
 /* Media query for smaller screens */
 @media (max-width: 815px) {
     .comment-form {
-        width: 100%;
+        width: 60%;
+        padding: none;
     }
 
     .comment {
-        width: 100%;
+        width: 60%;
     }
 }
