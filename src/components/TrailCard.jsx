@@ -7,7 +7,7 @@ export const TrailCard = ({ trailObject }) => {
   return (
     <div className="trail-card">
       <Link key={trailObject.id} to={`/trails/${trailObject.id}`}>
-        <img className="card-img" src={`https://img.oastatic.com/img/${trailObject.primaryImage.id}/.jpg`} alt={trailObject.title} />
+        <img className="card-img" src={`https://img.oastatic.com/img/${trailObject.primaryImage.id}/.jpg`} alt="" />
         <h2>{trailObject.title}</h2>
       </Link>
       <p className="duration">

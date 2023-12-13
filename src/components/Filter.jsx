@@ -49,7 +49,7 @@ export const Filter = ({
 
   return (
     <div className="filter-container">
-      <select className="filter-selects"
+      <select  aria-label="difficulty-filter" className="filter-selects"
         value={difficultyFilter || ""}
         onChange={(e) => {
           setRatingFilter('');
@@ -65,7 +65,7 @@ export const Filter = ({
         <option value="4">Hard</option>
         <option value="5">Super hard</option>
       </select>
-      <select className="filter-selects"
+      <select aria-label="rating-filter"  className="filter-selects"
         value={ratingFilter || ""}
         onChange={(e) => {
           setDifficultyFilter('');
@@ -82,7 +82,7 @@ export const Filter = ({
         <option value="5">5</option>
         <option value="6">6</option>
       </select>
-      <select className="filter-selects"
+      <select aria-label="category-filter" className="filter-selects"
         value={categoryFilter || ""}
         onChange={(e) => {
           setDifficultyFilter('');
