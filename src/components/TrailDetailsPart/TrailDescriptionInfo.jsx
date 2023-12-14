@@ -1,6 +1,4 @@
-import React from "react";
-
-const TrailDescriptionInfo = ({ gettingThere, tips }) => {
+export const TrailDescriptionInfo = ({ gettingThere, tips }) => {
   return (
     <div className="trail-description-info">
       <h3>Getting There</h3>
@@ -18,5 +16,3 @@ const TrailDescriptionInfo = ({ gettingThere, tips }) => {
     </div>
   );
 };
-
-export default TrailDescriptionInfo;

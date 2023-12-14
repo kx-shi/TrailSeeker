@@ -1,6 +1,4 @@
-import React from "react";
-
-const TrailElevationProfile = ({ elevationData, trailId }) => {
+export const TrailElevationProfile = ({ elevationData, trailId }) => {
   return (
     <div className="trail-elevation-container">
       <h3 className="text-left">Visual Information</h3>
@@ -16,5 +14,3 @@ const TrailElevationProfile = ({ elevationData, trailId }) => {
     </div>
   );
 };
-
-export default TrailElevationProfile;

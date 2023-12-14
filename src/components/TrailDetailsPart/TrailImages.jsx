@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../../styles/TrailImages.css";
 
-const TrailImages = ({ images }) => {
+export const TrailImages = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
@@ -49,5 +49,3 @@ const TrailImages = ({ images }) => {
 
   );
 };
-
-export default TrailImages;

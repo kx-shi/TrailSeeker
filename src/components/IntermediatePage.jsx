@@ -1,6 +1,3 @@
-/**
- * Component for various intermediate messages (e.g. Loading, error, ...)
- */
 import '../styles/IntermediatePages.css'
 
 export const IntermediatePage = ( {message} ) => {

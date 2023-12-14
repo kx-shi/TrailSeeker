@@ -1,18 +1,9 @@
-/**
- * Component that filters on liked trails and sends a filtered trailObjects array to TrailContainer
- * It uses React redux to get:
- *  - All trails from 'trails'
- *  - Liked trails from 'like'
- */
-import React, { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-// Action imports from reducers
 import { fetchTrails } from '../reducers/trails';
-// Component imports
 import { IntermediatePage } from './IntermediatePage';
 import { TrailContainer } from './TrailContainer';
 import { NavBar } from './NavBar';
-// Style imports
 import '../styles/TrailContainer.css'
 
 export const LikedTrailsContainer = () => {
