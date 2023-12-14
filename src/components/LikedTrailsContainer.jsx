@@ -21,14 +21,10 @@ export const LikedTrailsContainer = () => {
       filterLikedTrails()
     }, [trails, stableDispatch, likedTrails])
 
-    /**
-     * Function that filter the original array based on which trails are liked 
-     * */
-    const filterLikedTrails = () => {
+    const filterLikedTrails = () => {//Function that filter the original array based on which trails are liked 
       const likedTrailObjects = trails.trailObjects.filter((trail) => {
         return likedTrails.some((like) => like.id === trail.id && like.isLiked)
       });
-      //console.log(`Liked trails: `, likedTrailObjects)
       setlikedTrailObjects(likedTrailObjects);
     }
 

@@ -34,7 +34,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow: hidden; /* Ensure children are contained within the parent's border */
+  overflow: hidden;
 }
 
 /* Styles for images within the elevation profile container */
@@ -71,19 +71,6 @@
   margin-top: 20px;
 }
 
-/* General text styles for the trail details
-.trail-details h1,
-.trail-details h2,
-.trail-details h3,
-.trail-details h4,
-.trail-details h5,
-.trail-details h6,
-.trail-details p,
-.trail-details a {
-  color: #EFF1ED;
-}
- */
-
 .text-left {
   text-align: justify;
   width: 98%;
@@ -99,7 +86,7 @@
     display: block;
   }
 
-  /* Adjust the styles for images within the elevation profile container on smaller screens */
+  /* Adjusting the styles for images within the elevation profile container on smaller screens */
   .trail-elevation-profile > img {
     width: 90%;
   }
