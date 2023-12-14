@@ -9,13 +9,13 @@ export const NavBar = () => {
   };
 
   return (
-   <div className="navbar">
-    <NavLink  className="navbar-btn" to="/" onClick={goToHomePage}>
-      Go to Home
-    </NavLink>
-    <NavLink  className="navbar-btn" to="/liked-trails" >
-      My Liked Trails
-    </NavLink>
-  </div>
+    <div className="navbar">
+      <NavLink className="navbar-btn" to="/" onClick={goToHomePage}>
+        Go to Home
+      </NavLink>
+      <NavLink className="navbar-btn" to="/liked-trails">
+        My Liked Trails
+      </NavLink>
+    </div>
   );
 };

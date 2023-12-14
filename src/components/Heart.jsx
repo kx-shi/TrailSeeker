@@ -19,7 +19,7 @@ export const Heart = ({ trailID }) => {
     } else {
       setLiked(false);
     }
-  });
+  }, [likes, trailID]);
 
   return (
     <div>

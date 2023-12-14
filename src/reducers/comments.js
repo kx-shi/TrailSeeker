@@ -45,7 +45,6 @@ export const comments = createSlice({
             const { id, trailID, author, content } = action.payload;
             const timestamp = new Date().toLocaleString();
 
-            // TODO: Add logic
             state.commentList.push({
                 id,
                 trailID,

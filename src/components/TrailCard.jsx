@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
-import { Heart } from './Heart';
-import '../styles/TrailCard.css';
+import { Link } from "react-router-dom";
+import { Heart } from "./Heart";
+import "../styles/TrailCard.css";
 
 export const TrailCard = ({ trailObject }) => {
   return (
     <div className="trail-card">
       <Link key={trailObject.id} to={`/trails/${trailObject.id}`}>
         <div className="card-img-container">
-          <img className="card-img" src={`https://img.oastatic.com/img/${trailObject.primaryImage.id}/.jpg`} alt="" />
+          <img className="card-img" src={`https://img.oastatic.com/img/${trailObject.primaryImage.id}/.jpg`} alt="TrailImage"/>
         </div>
         <h2 className="title">{trailObject.title}</h2>
       </Link>
@@ -22,7 +22,7 @@ export const TrailCard = ({ trailObject }) => {
           alt={trailObject.category.name}
           title={trailObject.category.name}
         ></img>
-        <Heart trailID={trailObject.id}/>
+        <Heart trailID={trailObject.id} />
       </div>
     </div>
   );
