@@ -6,8 +6,6 @@ import { LikedTrailsContainer } from "./components/LikedTrailsContainer";
 
 export const routes = () => {
   const userLocation = "18.0649,59.3293";
-  const favorites = true;
-const children= true;
   return (
     <Routes>
       <Route path="/" element={<HomePage userLocation={userLocation} savedTrails={false}/>} />
