@@ -38,7 +38,7 @@
   position: absolute;
   top: 50%;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 2.5rem;
   color: #EFF1ED;
   font-weight: bold;
   padding: 0 0.5em;
@@ -54,16 +54,26 @@
   right: 0;
 }
 
+.arrow:hover,
+.arrow:focus,
+.arrow:active {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.arrow:active {
+  transform: translateY(-50%) scale(1.55);
+}
+
 .image-description {
   width: 100%;
   background-color: #BCBD8B;
-  padding: 0.5em 0;
-  margin-bottom: 15px;
+  padding: 0;
+  margin-bottom: 0.8em;
 }
 
 .image-title p {
   font-weight: bold;
-  font-size: small;
+  font-size: 1rem;
   color: #766153;
   margin: 0.1em;
 }
@@ -78,6 +88,34 @@
 
 .information-box p {
   font-weight: bold;
-  font-size: x-small;
+  font-size: 0.8rem;
   color: #766153;
+}
+
+@media screen and (max-width: 600px) {
+  .arrow {
+    font-size: 2em;
+  }
+
+  .information-box p {
+    font-size: 0.55em;
+  }
+
+  .image-title p {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .arrow {
+    font-size: 1.5em;
+  }
+
+  .information-box p {
+    font-size: 0.45em;
+  }
+
+  .image-title p {
+    font-size: 0.7em;
+  }
 }
