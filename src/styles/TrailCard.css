@@ -4,8 +4,12 @@
   border: 3px solid #3b5409;
   padding: 5px;
   border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
-
+.trail-card:hover{
+  transform: translateY(-3px);
+}
 .trail-card-flex {
   margin-top: 10px;
   display: flex;
