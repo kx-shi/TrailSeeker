@@ -75,7 +75,7 @@ export const GeneralInformation = ({
         <div className="general-information-section season-info">
           <img src="/CalendarIcon.png" alt="Season Icon" className="info-icon" title="best seasons" />
           <p>{`${Object.entries(season)
-            .filter(([_month, available]) => available)
+            .filter(([ available]) => available)
             .map(([month]) => month)
             .join(", ")}`}</p>
         </div>
