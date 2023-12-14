@@ -14,8 +14,9 @@
     height: 100%;
 }
 
-body {
+html, body {
     background-color: #373D20;
+    overflow:hidden;
 }
 
 .app {
