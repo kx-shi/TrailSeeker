@@ -1,64 +1,50 @@
-import { useState, useEffect, useCallback } from "react";
-import "./../styles/Filter.css";
+import { useState, useEffect } from "react";
+import './../styles/Filter.css';
 
-export const Filter = ({
+export const Filter = ({ 
   trailObjects,
   setTrailObjects,
   backupTrailObjects,
   setBackupTrailObjects,
 }) => {
-  const [difficultyFilter, setDifficultyFilter] = useState("");
-  const [ratingFilter, setRatingFilter] = useState("");
-  const [categoryFilter, setCategoryFilter] = useState("");
+  const [difficultyFilter, setDifficultyFilter] = useState('');
+  const [ratingFilter, setRatingFilter] = useState('');
+  const [categoryFilter, setCategoryFilter] = useState('');
 
-  const handleFilter = useCallback(() => {
+  useEffect(() => {
+    handleFilter();
+  }, [difficultyFilter, ratingFilter, categoryFilter]);
+
+  const handleFilter = () => {
     if (!Array.isArray(trailObjects)) {
       return;
     }
+  
     setBackupTrailObjects([...trailObjects]);
-    let filteredTrails = {};
-
+  
+    let filteredTrails = trailObjects;
+  
     if (difficultyFilter !== null && difficultyFilter.length > 0) {
       const difficulties = trailObjects.filter((trail) => trail.difficulties);
       filteredTrails = difficulties.filter(
         (d) => d.difficulties.difficulty[0].value === difficultyFilter
       );
     }
-
+  
     if (ratingFilter !== null && ratingFilter.length > 0) {
-      filteredTrails = trailObjects.filter(
+      filteredTrails = filteredTrails.filter(
         (trail) => trail.rating.qualityOfExperience.toString() === ratingFilter
       );
     }
-
+  
     if (categoryFilter !== null && categoryFilter.length > 0) {
-      filteredTrails = trailObjects.filter(
+      filteredTrails = filteredTrails.filter(
         (trail) => trail.category.id === categoryFilter
       );
     }
-
-    if (
-      typeof filteredTrails !== "undefined" &&
-      filteredTrails !== null &&
-      filteredTrails.length > 0
-    ) {
-      setTrailObjects(filteredTrails);
-    } else {
-      setTrailObjects(backupTrailObjects);
-    }
-  }, [
-    trailObjects,
-    setTrailObjects,
-    backupTrailObjects,
-    setBackupTrailObjects,
-    difficultyFilter,
-    ratingFilter,
-    categoryFilter,
-  ]);
-
-  useEffect(() => {
-    handleFilter();
-  }, [handleFilter]);
+  
+    setTrailObjects(filteredTrails);
+  };
 
   return (
     <div className="filter-container">
@@ -67,11 +53,9 @@ export const Filter = ({
         className="filter-selects"
         value={difficultyFilter || ""}
         onChange={(e) => {
-          setRatingFilter("");
-          setCategoryFilter("");
-          setDifficultyFilter(
-            e.target.value === "" ? null : e.target.value.toString()
-          );
+          setRatingFilter('');
+          setCategoryFilter('');
+          setDifficultyFilter(e.target.value === "" ? null : e.target.value.toString());
         }}
       >
         <option value="">All Difficulties</option>
@@ -85,11 +69,9 @@ export const Filter = ({
         className="filter-selects"
         value={ratingFilter || ""}
         onChange={(e) => {
-          setDifficultyFilter("");
-          setCategoryFilter("");
-          setRatingFilter(
-            e.target.value === "" ? null : e.target.value.toString()
-          );
+          setDifficultyFilter('');
+          setCategoryFilter('');
+          setRatingFilter(e.target.value === "" ? null : e.target.value.toString());
         }}
         multiple={false}
       >
@@ -106,11 +88,9 @@ export const Filter = ({
         className="filter-selects"
         value={categoryFilter || ""}
         onChange={(e) => {
-          setDifficultyFilter("");
-          setRatingFilter("");
-          setCategoryFilter(
-            e.target.value === "" ? null : e.target.value.toString()
-          );
+          setDifficultyFilter('');
+          setRatingFilter('');
+          setCategoryFilter(e.target.value === "" ? null : e.target.value.toString());
         }}
         multiple={false}
       >
