@@ -32,17 +32,17 @@ const filterStyles = (open) => ({
   container: ((baseStyles) => ({
     ...baseStyles,
     margin: "0 auto",
+    width: "152px",
+    height: "20px",
+    fontSize: "13px"
   })),
   control: ((baseStyles) => ({
     ...baseStyles,
-    margin: "10px",
+    marginTop: "25px",
   })),
   menu: (baseStyles) => ({
     ...baseStyles,
-    overflow: "hidden",
-    opacity: open ? 1 : 0,
-    transition: "all 0.2s ease-in-out",
-    visibility: open ? "visible" : "hidden"
+    transition: "all 0.2s ease-in-out"
   }),
   option: (baseStyles, {isFocused}) => ({
     ...baseStyles,
@@ -111,7 +111,8 @@ export const Filter = ({
         }}>
         <Select
           aria-label="difficulty-filter"
-          className="filter-selects" options={difficultyOptions}
+          className="filter-selects"
+          options={difficultyOptions}
           placeholder="Select difficulty"
           defaultValue={{label: "All Difficulties", value: ""}}
           value={difficultyFilter}
@@ -120,9 +121,7 @@ export const Filter = ({
             setCategoryFilter(categoryOptions[0]);
             setDifficultyFilter(difficulty === "" ? null : difficulty);
           }}
-          openMenuOnClick
           isSearchable={false}
-          menuIsOpen={true}
           styles={filterStyles(difficultyFilterOpen)}
         />
       </div>
@@ -134,7 +133,8 @@ export const Filter = ({
         }}>
         <Select
           aria-label="rating-filter"
-          className="filter-selects" options={ratingOptions}
+          className="filter-selects"
+          options={ratingOptions}
           placeholder="Select rating"
           defaultValue={{label: "All Ratings", value: ""}}
           value={ratingFilter}
@@ -143,9 +143,7 @@ export const Filter = ({
             setCategoryFilter(categoryOptions[0]);
             setRatingFilter(rating === "" ? null : rating);
           }}
-          openMenuOnClick
           isSearchable={false}
-          menuIsOpen={true}
           styles={filterStyles(ratingFilterOpen)}
         />
       </div>
@@ -157,7 +155,8 @@ export const Filter = ({
         }}>
         <Select
           aria-label="category-filter"
-          className="filter-selects" options={categoryOptions}
+          className="filter-selects"
+          options={categoryOptions}
           placeholder="Select category"
           defaultValue={{label: "All Categories", value: ""}}
           value={categoryFilter}
@@ -166,9 +165,7 @@ export const Filter = ({
             setRatingFilter(ratingOptions[0]);
             setCategoryFilter(category.value === "" ? null : category);
           }}
-          openMenuOnClick
           isSearchable={false}
-          menuIsOpen={true}
           styles={filterStyles(categoryFilterOpen)}
         />
       </div>
