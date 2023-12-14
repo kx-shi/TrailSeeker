@@ -14,7 +14,6 @@ export const like = createSlice({
       const { id } = action.payload;
 
       let liked = state.likedList.find((el) => el.id === id);
-      //console.log(liked);
       if (liked === undefined) {
         state.likedList.push({
           id,

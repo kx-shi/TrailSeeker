@@ -18,7 +18,6 @@ export const fetchTrails = createAsyncThunk('trails/fetchTrails', () => {
         })
         .then((response) => {
             const trailIds = response.data.result.map((trail) => trail.id);
-            //console.log("Repsonse from first fetch: ", trailIds)
             return axios.all(trailIds.map((id) => axios.get(`https://www.outdooractive.com/api/project/api-dev-oa/oois/${id}?key=yourtest-outdoora-ctiveapi&lang=en`)))
                 .then((res) => res.map((trail) => trail.data.tour))
                 .then((data) => data.flat())
@@ -33,7 +32,6 @@ export const trails = createSlice({
             state.loading = true;
         })
         builder.addCase(fetchTrails.fulfilled, (state, action) => {
-            //console.log("Payload: ", action.payload)
             state.loading = false;
             state.trailObjects = action.payload;
             state.error = '';
@@ -45,4 +43,3 @@ export const trails = createSlice({
         })
     }
 });
-
