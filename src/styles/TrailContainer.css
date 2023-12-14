@@ -5,6 +5,7 @@
 .card-container { /* div for section that displays all trail cards */
     display: grid;
     grid-template-columns: repeat(1, minmax(300px, 1fr));
+    
 }
 
 @media screen and (min-width: 700px) {

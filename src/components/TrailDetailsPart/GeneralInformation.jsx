@@ -120,9 +120,9 @@ export const GeneralInformation = ({
             title="best seasons"
           />
           <p>{`${Object.entries(season)
-        .filter(([, available]) => available)
-        .map(([month]) => month)
-        .join(", ")}`}</p>
+            .filter(([ available]) => available)
+            .map(([month]) => month)
+            .join(", ")}`}</p>
         </div>
       )}
     </div>

@@ -79,7 +79,6 @@ export const Filter = ({
         <option value="2">Easy</option>
         <option value="3">Medium</option>
         <option value="4">Hard</option>
-        <option value="5">Super hard</option>
       </select>
       <select
         aria-label="rating-filter"

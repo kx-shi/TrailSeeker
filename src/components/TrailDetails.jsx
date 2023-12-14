@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import {GeneralInformation} from "./TrailDetailsPart/GeneralInformation";
+import { GeneralInformation } from "./TrailDetailsPart/GeneralInformation";
 import { Heart } from "./Heart";
-import {TrailElevationProfile} from "./TrailDetailsPart/TrailElevationProfile";
-import {TrailDescription} from "./TrailDetailsPart/TrailDescription";
-import {TrailDescriptionInfo} from "./TrailDetailsPart/TrailDescriptionInfo";
-import {TrailImages} from "./TrailDetailsPart/TrailImages";
-import {TrailAdditionalInfo} from "./TrailDetailsPart/TrailAdditionalInfo";
+import { TrailElevationProfile } from "./TrailDetailsPart/TrailElevationProfile";
+import { TrailDescription } from "./TrailDetailsPart/TrailDescription";
+import { TrailDescriptionInfo } from "./TrailDetailsPart/TrailDescriptionInfo";
+import { TrailImages } from "./TrailDetailsPart/TrailImages";
+import { TrailAdditionalInfo } from "./TrailDetailsPart/TrailAdditionalInfo";
 import "../styles/TrailDetails.css";
 
 const TrailDetails = ({ trailId }) => {
@@ -56,10 +56,12 @@ const TrailDetails = ({ trailId }) => {
         <div className="text-left">
           <div className="trail-details-flex">
             <h1>{trailData.title}</h1>
-            <Heart trailID={trailId}/>
+            <Heart trailID={trailId} />
           </div>
           <TrailDescription description={trailData.longText} />
-          <TrailAdditionalInfo additionalInfo={trailData.additionalInformation} />
+          <TrailAdditionalInfo
+            additionalInfo={trailData.additionalInformation}
+          />
           <TrailDescriptionInfo
             gettingThere={trailData.gettingThere}
             tips={trailData.tip}
@@ -75,7 +77,10 @@ const TrailDetails = ({ trailId }) => {
           length={trailData.length}
         />
       </div>
-      <TrailElevationProfile elevationData={trailData.elevationProfile} trailId={trailId} />
+      <TrailElevationProfile
+        elevationData={trailData.elevationProfile}
+        trailId={trailId}
+      />
     </div>
   );
 };
