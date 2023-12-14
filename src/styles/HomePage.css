@@ -4,8 +4,14 @@
 }
 
 .homepage-container {
-    margin: 0;
+    width: 100%;
+    margin: 0 auto;
     padding: 0;
+}
+
+.page-container {
+    width: 100%;
+    margin: 0 auto;
 }
 
 h2 {
@@ -15,6 +21,10 @@ h2 {
 .trail-search-title {
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
+    margin: 1em auto;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 @media screen and (max-width: 510px) {

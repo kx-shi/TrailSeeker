@@ -1,6 +1,8 @@
 .trail-container {
   /* div for whole TrailContainer */
-  margin: 0 5%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .card-container {

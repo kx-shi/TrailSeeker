@@ -126,13 +126,13 @@ export const HomePage = ({ userLocation, savedTrails }) => {
         <p>No trails available. Try increasing the search radius.</p>
       )}
       {!isLoading && trails !== null && !savedTrails && (
-        <div>
+        <div className="page-container">
           <h2 className="trail-search-title">Trails Near Stockholm</h2>
           <TrailContainer trailObjects={trailObjects} />
         </div>
       )}
       {!isLoading && trails !== null && savedTrails && (
-        <div>
+        <div className="page-container">
           <h2>Liked Trails</h2>
           <LikedTrailsContainer />
         </div>
