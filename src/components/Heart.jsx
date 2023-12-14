@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import "../styles/Heart.css";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { like } from "../reducers/heart";
+import "../styles/Heart.css";
 
 export const Heart = ({ trailID }) => {
   const [liked, setLiked] = useState(false);

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import GeneralInformation from "./TrailDetailsPart/GeneralInformation";
+import { useEffect, useState } from "react";
+import {GeneralInformation} from "./TrailDetailsPart/GeneralInformation";
 import { Heart } from "./Heart";
-import TrailOverview from "./TrailDetailsPart/TrailOverview";
-import TrailElevationProfile from "./TrailDetailsPart/TrailElevationProfile";
-import TrailDescription from "./TrailDetailsPart/TrailDescription";
-import TrailDescriptionInfo from "./TrailDetailsPart/TrailDescriptionInfo";
-import TrailImages from "./TrailDetailsPart/TrailImages";
-import TrailAdditionalInfo from "./TrailDetailsPart/TrailAdditionalInfo";
+import {TrailOverview} from "./TrailDetailsPart/TrailOverview";
+import {TrailElevationProfile} from "./TrailDetailsPart/TrailElevationProfile";
+import {TrailDescription} from "./TrailDetailsPart/TrailDescription";
+import {TrailDescriptionInfo} from "./TrailDetailsPart/TrailDescriptionInfo";
+import {TrailImages} from "./TrailDetailsPart/TrailImages";
+import {TrailAdditionalInfo} from "./TrailDetailsPart/TrailAdditionalInfo";
 import "../styles/TrailDetails.css";
 
 const TrailDetails = ({ trailId }) => {

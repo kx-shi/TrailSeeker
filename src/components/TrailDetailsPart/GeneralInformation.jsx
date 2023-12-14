@@ -1,4 +1,3 @@
-import React from "react";
 import "../../styles/GeneralInformation.css";
 
 const formatTime = (minutes) => {
@@ -10,7 +9,7 @@ const formatTime = (minutes) => {
   }`;
 };
 
-const GeneralInformation = ({
+export const GeneralInformation = ({
   category,
   difficulties,
   elevation,
@@ -84,5 +83,3 @@ const GeneralInformation = ({
     </div>
   );
 };
-
-export default GeneralInformation;

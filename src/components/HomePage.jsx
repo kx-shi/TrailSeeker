@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {TrailContainer} from './TrailContainer';
+import { useState, useEffect } from 'react';
+import { TrailContainer } from './TrailContainer';
 import { LikedTrailsContainer } from './LikedTrailsContainer';
 import { NavBar } from './NavBar';
 import { Filter } from './Filter';
@@ -74,7 +74,6 @@ export const HomePage = ({ userLocation, savedTrails }) => {
             setTrailObjects(trailObjectArray);
             setBackupTrailObjects([...trailObjectArray]);
             setTimeout(() => {
-                // console.log('Tour Array', trailObjectArray);
             }, 700); // to get one log for not to confuse
         } catch (error) {
             console.error('Error fetching trail objects:', error);
