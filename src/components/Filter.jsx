@@ -19,35 +19,31 @@ export const Filter = ({
     if (!Array.isArray(trailObjects)) {
       return;
     }
-
+  
     setBackupTrailObjects([...trailObjects]);
-
+  
     let filteredTrails = trailObjects;
-
+  
     if (difficultyFilter !== null && difficultyFilter.length > 0) {
       const difficulties = trailObjects.filter((trail) => trail.difficulties);
       filteredTrails = difficulties.filter(
         (d) => d.difficulties.difficulty[0].value === difficultyFilter
       );
     }
-
+  
     if (ratingFilter !== null && ratingFilter.length > 0) {
-      filteredTrails = trailObjects.filter(
+      filteredTrails = filteredTrails.filter(
         (trail) => trail.rating.qualityOfExperience.toString() === ratingFilter
       );
     }
-    
+  
     if (categoryFilter !== null && categoryFilter.length > 0) {
-      filteredTrails = trailObjects.filter(
+      filteredTrails = filteredTrails.filter(
         (trail) => trail.category.id === categoryFilter
       );
     }
-
-    if (filteredTrails.length > 0) {
-      setTrailObjects(filteredTrails); 
-    } else {
-      setTrailObjects(backupTrailObjects);
-    }
+  
+    setTrailObjects(filteredTrails);
   };
 
   return (

@@ -1,23 +1,48 @@
-.trail-container { /* div for whole TrailContainer */
-    margin: 0 5%;
+.trail-container {
+  /* div for whole TrailContainer */
+  margin: 0 5%;
 }
 
-.card-container { /* div for section that displays all trail cards */
-    display: grid;
-    grid-template-columns: repeat(1, minmax(300px, 1fr));
-    
+.card-container {
+  /* div for section that displays all trail cards */
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
 }
+
+.no-trails-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     /* Adjust the height as needed */
+    padding: 20px;
+    border: 2px solid #3b5409;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    background-color: #DADBA3;
+  }
+  
+  .no-trails-message h3 {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .no-trails-message p {
+    color: #777;
+  }
 
 @media screen and (min-width: 700px) {
-    .card-container { /* div for section that displays all trail cards */
-        display: grid;
-        grid-template-columns: repeat(2, minmax(300px, 1fr));
-    }
+  .card-container {
+    /* div for section that displays all trail cards */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
 }
 
 @media screen and (min-width: 1000px) {
-    .card-container { /* div for section that displays all trail cards */
-        display: grid;
-        grid-template-columns: repeat(3, minmax(300px, 1fr));
-    }
+  .card-container {
+    /* div for section that displays all trail cards */
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
