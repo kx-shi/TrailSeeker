@@ -3,6 +3,7 @@
   margin: 20px;
   border: 3px solid #3b5409;
   padding: 5px;
+  border-radius: 10px;
 }
 
 .trail-card-flex {
@@ -30,6 +31,7 @@ img.activity-category {
   width: 35px;
   height: 45px;
   margin: 0;
+  border-radius: 10px;
 }
 
 .title {
@@ -58,6 +60,7 @@ img.activity-category {
   height: 100%;
   object-fit: cover;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 999px) {
