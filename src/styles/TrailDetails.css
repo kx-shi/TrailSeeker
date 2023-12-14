@@ -49,7 +49,7 @@
 
 /* Styles for the trail description section */
 .trail-description {
-  line-height: 1.6;
+  line-height: 1.3;
   margin-bottom: 20px;
 }
 
@@ -86,7 +86,7 @@
 
 .text-left {
   text-align: justify;
-
+  width: 98%;
 }
 
 .trail-additional-info > div { 
@@ -103,10 +103,9 @@
   .trail-elevation-profile > img {
     width: 90%;
   }
+  
+  .trail-details-grid { /* Remove grid display */
+    display: block;
+}
 }
 
-@media (max-width: 650px) {
-  .trail-details-grid { /* Remove grid display */
-      display: block;
-  }
-}

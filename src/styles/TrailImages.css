@@ -1,32 +1,28 @@
-.trail-images-unique {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-}
-
-.trail-images-unique .image-container {
+.trail-image {
   width: 100%;
   position: relative;
 }
 
-.trail-images-unique .arrow {
+.trail-image-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 67%;
+  overflow: hidden;
+  background-color: #ccc;
+}
+
+.trail-image-box {
   position: absolute;
-  top: 280px;
-  cursor: pointer;
-  font-size: 24px;
-  color: #EFF1ED;
-  font-weight: bold;
-  padding: 0 0.5em;
-  text-shadow: 1px 1px 5px black;
-}
-
-.arrow.left {
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.arrow.right {
-  right: 0;
+.trail-image-box img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .vignette {
@@ -38,39 +34,51 @@
   height: 100%;
 }
 
-.trail-images-unique .arrow:hover {
-  transform: scale(1.3);
+.arrow {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: #EFF1ED;
+  font-weight: bold;
+  padding: 0 0.5em;
+  text-shadow: 1px 1px 5px black;
+  transform: translateY(-50%);
 }
 
-.trail-images-unique .photo-box {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-height: 600px;
-  overflow: hidden;
+.arrow.left {
+  left: 0;
 }
 
-.trail-images-unique .image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.arrow.right {
+  right: 0;
+}
+
+.arrow:hover,
+.arrow:focus,
+.arrow:active {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.arrow:active {
+  transform: translateY(-50%) scale(1.55);
 }
 
 .image-description {
   width: 100%;
   background-color: #BCBD8B;
-  padding: 0.em 0;
-  margin-bottom: 15px;
+  padding: 0;
+  margin-bottom: 0.8em;
 }
 
-.trail-images-unique .image-title p {
+.image-title p {
   font-weight: bold;
-  font-size: small;
+  font-size: 1rem;
   color: #766153;
-  margin: 0.5em;
+  margin: 0.1em;
 }
 
-.trail-images-unique .information-box {
+.information-box {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -78,39 +86,36 @@
   margin: 0;
 }
 
-/* Styling for information box p-elements */
-.trail-images-unique .information-box p {
+.information-box p {
   font-weight: bold;
-  font-size: x-small;
+  font-size: 0.8rem;
   color: #766153;
 }
 
-@media (max-width: 900px) {
-  .trail-images-unique .photo-box {
-    max-height: 400px;
+@media screen and (max-width: 600px) {
+  .arrow {
+    font-size: 2em;
   }
 
-  .trail-images-unique .arrow {
-    top: 190px;
-  }
-}
-
-@media (max-width: 600px) {
-  .trail-images-unique .photo-box {
-    max-height: 300px;
+  .information-box p {
+    font-size: 0.55em;
   }
 
-  .trail-images-unique .arrow {
-    top: 140px;
+  .image-title p {
+    font-size: 0.8em;
   }
 }
 
-@media (max-width: 450px) {
-  .trail-images-unique .photo-box {
-    max-height: 200px;
+@media screen and (max-width: 400px) {
+  .arrow {
+    font-size: 1.5em;
   }
 
-  .trail-images-unique .arrow {
-    top: 90px;
+  .information-box p {
+    font-size: 0.45em;
+  }
+
+  .image-title p {
+    font-size: 0.7em;
   }
 }
