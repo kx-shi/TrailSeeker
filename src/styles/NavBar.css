@@ -1,25 +1,25 @@
 .navbar {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .navbar-btn {
-    background-color: #DADBA3;
-    color: black;
-	border: none;
-	padding: 0.5em 1em;
-	cursor: pointer;
-    border-radius: 25px;
-    border: 1px solid #766153;
+  background-color: #dadba3;
+  color: black;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border-radius: 25px;
+  border: 1px solid #766153;
 }
 
 .navbar-btn:hover {
-    background-color: #BCBD8B;
+  background-color: #bcbd8b;
+  font-weight: 600;
 }
 
-
 .active-link {
-    color: red;
-  }
+  color: red;
+}
