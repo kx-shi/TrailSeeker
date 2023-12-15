@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/TrailContainer.css";
 import { TrailCard } from "./TrailCard";
 
@@ -18,7 +17,7 @@ export const TrailContainer = ({ trailObjects }) => {
         // Display message when no trails are available
         <div className="no-trails-message">
           <h3>No Trail Is Available</h3>
-          <p>Sorry, we couldn't find any trails for your filter.</p>
+          <p>Sorry, we couldn`&apos`t find any trails for your filter.</p>
         </div>
       )}
     </div>

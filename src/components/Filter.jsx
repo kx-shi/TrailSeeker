@@ -27,7 +27,7 @@ const categoryOptions = [
 ]
 
 /* Styling for Select-components */
-const filterStyles = (open) => ({
+const filterStyles = () => ({
   singleValue: (baseStyles) => ({ ...baseStyles, color: "#000" }),
   container: ((baseStyles) => ({
     ...baseStyles,
@@ -54,7 +54,6 @@ const filterStyles = (open) => ({
 export const Filter = ({ 
   trailObjects,
   setTrailObjects,
-  backupTrailObjects,
   setBackupTrailObjects,
 }) => {
   const [difficultyFilter, setDifficultyFilter] = useState(difficultyOptions[0]);

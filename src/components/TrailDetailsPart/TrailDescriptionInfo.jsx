@@ -1,7 +1,7 @@
 export const TrailDescriptionInfo = ({ gettingThere, tips }) => {
   return (
     <div className="trail-description-info">
-      <h3>Getting There</h3>
+      <h2>Getting There</h2>
       {gettingThere ? (
         <p dangerouslySetInnerHTML={{ __html: gettingThere }} />
       ) : (
