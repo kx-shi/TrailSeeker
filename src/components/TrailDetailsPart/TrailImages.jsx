@@ -22,7 +22,7 @@ export const TrailImages = ({ images }) => {
         <div className="trail-image-box">
           <img
             src={`https://img.oastatic.com/img2/${currentImage.id}/default/variant.jpg`}
-            alt={currentImage.title}
+            alt=""
             className="image"
           />
         </div>
